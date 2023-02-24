@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  db:
+    build:
+      context: ./database
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+  rest-api:
+    build:
+      context: ./rest-api
+    environment:
+      - API_PORT=${API_PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - MONGO_URI=${MONGO_URI}
+    ports:
+      - ${API_PORT}:${API_PORT}
+    depends_on:
+      - db
