@@ -2,20 +2,14 @@ version: "3"
 
 services:
   database:
-    env_file: .env
-    build:
-      context: ./database
-      dockerfile: MongoDB_Dockerfile
+    image: trilbysir/ezge-db-repo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     ports:
       - ${DB_PORT}:${DB_PORT}
   rest-api:
-    env_file: .env
-    build:
-      context: ./rest-api
-      dockerfile: RestAPI_Dockerfile
+    image: trilbysir/ezge-rest-api-repo:latest
     environment:
       - API_PORT=${API_PORT}
       - DB_HOST=${DB_HOST}

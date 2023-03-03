@@ -1,21 +1,20 @@
 const mongoose = require('mongoose');
 
-
 const courseSchema = new mongoose.Schema({
 
     CRSE: {type: String, required: true},
-    CATALOG_NBR: {type: Number, required: true},
+    CATALOG_NBR: {type: String, required: true},
     CRSE_CAREER: {type: String, required: true},
     CRSE_DESCR: {type: String, required: true},
     CRSE_ID: {type: Number, required: true},
     CRSE_TITLE: {type: String, required: true},
-    CRSE_TYP_OFFR: {type: String, required: false, default: "NA"},
-    CRSE_UPDATE: {type: Date, required: false},
-    DEPT_ID: {type: Number, required: false},
-    GE_ATTRIBUTE: {type: String, required: false, default: "NA"},
+    CRSE_TYP_OFFR: {type: String, required: true},
+    CRSE_UPDATE: {type: Date, required: true},
+    DEPT_ID: {type: Number, required: true},
+    GE_ATTRIBUTE: {type: String, required: true},
     SUBJECT_ID: {type: String, required: true},
-    UNITS_RANGE: {type: Number, required: true},
-    UNIT_REPEAT_LIMIT: {type: Number, required: false},
+    UNITS_RANGE: {type: String, required: true},
+    UNIT_REPEAT_LIMIT: {type: String, required: true},
     POS_ID: {type: Number, required: true}
 
 }, { collection: 'catalogue' });

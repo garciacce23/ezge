@@ -12,7 +12,7 @@ app.use(bodyParser.json()); // Middleware for parsing JSON; allows us to access 
 
 // -- Connect to MongoDB and start server -- //
 const mongoURI = process.env.MONGO_URI; // Get MongoDB URI from .env file
-//console.log(`MONGO_URI: ${url}`);
+console.log(`MONGO_URI: ${mongoURI}`);
 mongoose.set('strictQuery', false);
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -23,6 +23,17 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     })
     .catch(err => {
         console.error('Error connecting to MongoDB:', err.message);
+    });
+
+// Populate Database from Files
+const catalogue = require('./models/course_catalogue.json');
+
+CourseModel.insertMany(catalogue)
+    .then(() => {
+        console.log("Populated Catalogue");
+    })
+    .catch(err => {
+        console.error('Error populating catalogue:', err.message);
     });
 
 

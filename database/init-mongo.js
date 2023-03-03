@@ -1,11 +1,11 @@
 const dbName = 'ezge';
-db = db.getSiblingDB(dbName);
+db = db.getSiblingDB("ezge");
 
 db.createUser(
     {
         user: "admin",
         pwd: "password123",
-        roles: [ { role: "readWrite", db: dbName } ]
+        roles: [ { role: "readWrite", db: "ezge" } ]
     }
 );
 
