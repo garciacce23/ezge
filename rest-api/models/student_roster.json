@@ -1,0 +1,32 @@
+[{
+  "studentId": "12345",
+  "name": {
+    "first": "John",
+    "last": "Doe"
+  },
+  "courses": {
+    "completed": [
+      {
+        "POS_ID": 992
+      },
+      {
+        "POS_ID": 1798
+      }
+    ],
+    "inProgress": [
+      {
+        "POS_ID": 2164
+      },
+      {
+        "POS_ID": 2456
+      }
+    ],
+    "wishList": [
+      {
+        "POS_ID": 3032
+      }
+    ]
+  },
+  "major": "Computer Science",
+  "standing": "Junior"
+}]

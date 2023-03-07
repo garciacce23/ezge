@@ -11,3 +11,6 @@ db.createUser(
 
 db.createCollection('catalogue');
 db.catalogue.createIndex({ POS_ID: 1 }, { unique: true });
+
+db.createCollection('roster');
+db.roster.createIndex({ studentId: 1 }, { unique: true });
