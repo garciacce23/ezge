@@ -17,3 +17,6 @@ db.roster.createIndex({ studentId: 1 }, { unique: true });
 
 db.createCollection('screens');
 db.screens.createIndex({ 'metadata.ID': 1 }, { unique: true });
+
+db.createCollection('ajaxContent');
+db.ajaxContent.createIndex({ 'metadata.ID': 1 }, { unique: true });
