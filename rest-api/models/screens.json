@@ -1,0 +1,400 @@
+[
+  {
+    "metadata": {
+      "version": "2.0",
+      "label": "GE_AREAS"
+    },
+    "contentContainerWidth": "narrow",
+    "content": [
+      {
+        "elementType": "divider",
+        "borderColor": "transparent"
+      },
+      {
+        "elementType": "container",
+        "content": [
+          {
+            "elementType": "blockHeading",
+            "heading": "Foundation",
+            "headingLevel": 1,
+            "headingFontWeight": "bold",
+            "headingTextColor": "#880808"
+          },
+          {
+            "elementType": "collapsible",
+            "label": "",
+            "title": "Area A: Fundamental Skills and Knowledge",
+            "description": "",
+            "content": [
+              {
+                "elementType": "html",
+                "html": "<p style='color:#0818A8'>Four courses: One in A1, one in A2, one in A3, & one in B4 for a minimum of 12 units."
+              },
+              {
+                "elementType": "list",
+                "listStyle": "grouped",
+                "items": [
+                  {
+                    "title": "A1: Oral Communications",
+                    "description": "",
+                    "link": {
+                      "external": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    }
+                  },
+                  {
+                    "title": "A2: Written Communication",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  },
+                  {
+                    "title": "A3: Critical Thinking",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  },
+                  {
+                    "title": "B4: Quantitative Reasoning",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elementType": "blockHeading",
+        "heading": "Breadth",
+        "headingLevel": 1,
+        "headingFontWeight": "bold",
+        "headingTextColor": "#880808"
+      },
+      {
+        "elementType": "container",
+        "id": "text",
+        "content": [
+          {
+            "elementType": "collapsible",
+            "label": "",
+            "title": "Area B: Physical Universe and Its Life Forms",
+            "description": "",
+            "content": [
+              {
+                "elementType": "html",
+                "html": "<p style='color:#0818A8'>Two courses: One in B1 and one in B2"
+              },
+              {
+                "elementType": "list",
+                "listStyle": "grouped",
+                "items": [
+                  {
+                    "title": "B1: Physical Sciences",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  },
+                  {
+                    "title": "B2: Life Sciences",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  },
+                  {
+                    "title": "B3: Laboratory Component",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elementType": "container",
+        "id": "text",
+        "content": [
+          {
+            "elementType": "collapsible",
+            "label": "",
+            "title": "Area C: Arts and Humanities",
+            "description": "",
+            "content": [
+              {
+                "elementType": "html",
+                "html": "<p style='color:#0818A8'>Three courses: one in C1, one in C2, and a third from C1 or C2"
+              },
+              {
+                "elementType": "list",
+                "listStyle": "grouped",
+                "items": [
+                  {
+                    "title": "C1: Arts",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  },
+                  {
+                    "title": "C2: Humanities",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  },
+                  {
+                    "title": "C1/C2:",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elementType": "container",
+        "id": "text",
+        "content": [
+          {
+            "elementType": "collapsible",
+            "label": "",
+            "title": "Area D: Social, Political & Economic Institutions & Behavior, Historical Background",
+            "description": "",
+            "content": [
+              {
+                "elementType": "html",
+                "html": "<p style='color:#0818A8'>Two courses: One in D1 and D2"
+              },
+              {
+                "elementType": "list",
+                "listStyle": "grouped",
+                "items": [
+                  {
+                    "title": "D1: American History",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  },
+                  {
+                    "title": "D2: Social Science",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elementType": "container",
+        "id": "text",
+        "content": [
+          {
+            "elementType": "collapsible",
+            "label": "",
+            "title": "Area E: Lifelong Understanding & Self-Development",
+            "description": "",
+            "content": [
+              {
+                "elementType": "html",
+                "html": "<p style='color:#0818A8'>One Course"
+              },
+              {
+                "elementType": "list",
+                "listStyle": "grouped",
+                "items": [
+                  {
+                    "title": "E:",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elementType": "container",
+        "id": "text",
+        "content": [
+          {
+            "elementType": "collapsible",
+            "label": "",
+            "title": "Area F: Ethnic Studies",
+            "description": "",
+            "content": [
+              {
+                "elementType": "html",
+                "html": "<p style='color:#0818A8'>One Course"
+              },
+              {
+                "elementType": "list",
+                "listStyle": "grouped",
+                "items": [
+                  {
+                    "title": "F:",
+                    "description": "",
+                    "link": {
+                      "relativePath": ""
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elementType": "blockHeading",
+        "heading": "Wishlist",
+        "headingLevel": 1,
+        "headingFontWeight": "bold",
+        "headingTextColor": "#880808"
+      },
+      {
+        "elementType": "container",
+        "id": "text",
+        "content": [
+          {
+            "elementType": "collapsible",
+            "label": "",
+            "title": "Classes",
+            "description": "",
+            "content": [
+              {
+                "elementType": "html",
+                "html": "Eyy I'm walkin heee"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "metadata": {
+      "version": "2.0",
+      "label": "CLASS_SELECTION"
+    },
+    "contentContainerWidth": "medium",
+    "content": [
+      {
+        "elementType": "divider",
+        "borderColor": "transparent"
+      },
+      {
+        "elementType": "hero",
+        "height": "fluid",
+        "content": [
+          {
+            "elementType": "heroHeading",
+            "heading": "{Sub-area_name}",
+            "fontSize": "2rem",
+            "textAlignment": "center"
+          },
+          {
+            "elementType": "heroSubheading",
+            "subheading": "",
+            "textAlignment": "center"
+          }
+        ]
+      },
+      {
+        "elementType": "form",
+        "id": "filters",
+        "items": [
+          {
+            "elementType": "formInputCheckboxGroup",
+            "name": "devices",
+            "label": "Semester Typically offered",
+            "description": "",
+            "options": {
+              "1": "Fall",
+              "2": "Spring"
+            },
+            "optionDescriptions": {
+              "1": "",
+              "2": ""
+            },
+            "value": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "elementType": "formInputAssistedMultiselect",
+            "name": "assisted_multiselect",
+            "label": "Subject(s)",
+            "description": "Select one or more",
+            "options": [
+              {
+                "value": "subject1",
+                "label": "Subject1"
+              },
+              {
+                "value": "subject2",
+                "label": "Subject2"
+              },
+              {
+                "value": "subject3",
+                "label": "Subject3"
+              }
+            ]
+          },
+          {
+            "elementType": "formInputCheckboxGroup",
+            "name": "devices",
+            "label": "Order By:",
+            "description": "",
+            "options": {
+              "1": "Course Name",
+              "2": "Course Subject",
+              "3": "Units"
+            },
+            "optionDescriptions": {
+              "1": "",
+              "2": "",
+              "3": ""
+            },
+            "value": [
+            ]
+          }
+        ]
+      },
+      {
+        "elementType": "collapsible",
+        "label": "",
+        "title": "{Class_name}",
+        "description": "",
+        "content": [
+          {
+            "elementType": "html",
+            "html": "{Class_description}"
+          }
+        ]
+      }
+    ]
+  }
+]
