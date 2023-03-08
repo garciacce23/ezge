@@ -6,7 +6,7 @@ const ScreenModel = require('../models/screenModel');
 const getScreen = async (req, res, next) => {
     try {
         const screen = await ScreenModel.findOne({
-            'metadata.label': req.params.id
+            'metadata.ID': req.params.id
         });
 
         if (screen == null) {

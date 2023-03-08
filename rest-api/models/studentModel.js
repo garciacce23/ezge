@@ -34,7 +34,7 @@ const studentSchema = new mongoose.Schema({
 
 // Define a function that updates the undergradRequirements field of a student
 studentSchema.statics.updateUndergradRequirements = async function() {
-    console.log("updateUndergradRequirements was called...")
+    console.log("Updating Undergrad Requirements...")
     const students = await this.find();
 
     for (const student of students) {
@@ -42,12 +42,12 @@ studentSchema.statics.updateUndergradRequirements = async function() {
             .concat(student.courses.inProgress)
             .concat(student.courses.wishList)
             .map(course => course.POS_ID);
-        console.log(`CourseIds: ${courseIds}`)
+        //console.log(`CourseIds: ${courseIds}`)
 
         // Find the courses that the student has taken
         const courses = await CourseModel.find({POS_ID: {$in: courseIds}});
 
-        console.log(`Number of courses: ${courses.keys(courses).length}`);
+        //console.log(`Number of courses: ${courses.keys(courses).length}`);
 
         // Get the GE_ATTRIBUTE values for the completed, in-progress courses, and wish listed courses
         const completedGEs = courses
@@ -60,19 +60,21 @@ studentSchema.statics.updateUndergradRequirements = async function() {
             .filter(course => course.GE_ATTRIBUTE !== 'NA' && student.courses.wishList.some(wishList => wishList.POS_ID === course.POS_ID))
             .map(course => course.GE_ATTRIBUTE);
 
+        /*
         console.log(`completedGEs: ${completedGEs}`);
         console.log(`inProgressGEs: ${inProgressGEs}`);
         console.log(`wishListGEs: ${wishListGEs}`);
+        */
 
         // Create arrays of unique GE_ATTRIBUTE values for the completed, in-progress, and remaining requirements
         const uniqueCompletedGEs = [...new Set(completedGEs)];
-        console.log(`uniqueCompletedGEs: ${uniqueCompletedGEs}`)
+        //console.log(`uniqueCompletedGEs: ${uniqueCompletedGEs}`)
 
         const uniqueInProgressGEs = [...new Set(inProgressGEs)];
-        console.log(`uniqueInProgressGEs: ${uniqueInProgressGEs}`)
+        //console.log(`uniqueInProgressGEs: ${uniqueInProgressGEs}`)
 
         const uniqueWishListGEs = [...new Set(wishListGEs)];
-        console.log(`uniqueWishListGEs: ${uniqueWishListGEs}`)
+        //console.log(`uniqueWishListGEs: ${uniqueWishListGEs}`)
 
         // Get all the GE_ATTRIBUTE values in the catalogue
         const catalogueGEs = await CourseModel.distinct('GE_ATTRIBUTE');
@@ -82,7 +84,7 @@ studentSchema.statics.updateUndergradRequirements = async function() {
             && !uniqueInProgressGEs.includes(GE)
             && !uniqueWishListGEs.includes(GE)
             && GE !== 'NA');
-        console.log(`uniqueRemainingGEs: ${uniqueRemainingGEs}`);
+        //console.log(`uniqueRemainingGEs: ${uniqueRemainingGEs}`);
 
         // Update the undergradRequirements field of the student document
         student.undergradRequirements.completed = uniqueCompletedGEs.map(GE => ({GE_ATTRIBUTE: GE}));

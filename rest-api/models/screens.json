@@ -2,7 +2,7 @@
   {
     "metadata": {
       "version": "2.0",
-      "label": "GE_AREAS"
+      "ID": "GE_AREAS"
     },
     "contentContainerWidth": "narrow",
     "content": [
@@ -292,11 +292,10 @@
       }
     ]
   },
-
   {
     "metadata": {
       "version": "2.0",
-      "label": "CLASS_SELECTION"
+      "ID": "CLASS_SELECTION"
     },
     "contentContainerWidth": "medium",
     "content": [

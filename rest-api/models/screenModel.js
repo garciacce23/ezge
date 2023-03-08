@@ -3,7 +3,15 @@ const mongoose = require('mongoose');
 const screenSchema = new mongoose.Schema({
     metadata: {
         type: Object,
-        required: true
+        required: true,
+        version: {
+            type: String,
+            required: true
+        },
+        ID: {
+            type: String,
+            required: true
+        }
     },
     header: {
         type: Array,
