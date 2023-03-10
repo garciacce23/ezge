@@ -1,21 +1,19 @@
 version: "3"
-
+name: ezge
 services:
   database:
-    env_file: .env
     build:
-      context: ./database
-      dockerfile: MongoDB_Dockerfile
+      context: ../../database
+      dockerfile: ../database/MongoDB_Dockerfile
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     ports:
       - ${DB_PORT}:${DB_PORT}
   rest-api:
-    env_file: .env
     build:
-      context: ./rest-api
-      dockerfile: RestAPI_Dockerfile
+      context: ../../rest-api
+      dockerfile: ../rest-api/RestAPI_Dockerfile
     environment:
       - API_PORT=${API_PORT}
       - DB_HOST=${DB_HOST}

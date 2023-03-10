@@ -2,6 +2,9 @@ version: "3"
 
 services:
   database:
+    build:
+      context: ../../database
+      dockerfile: ../database/MongoDB_ProductionDockerfile
     image: trilbysir/ezge-db-repo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
@@ -9,6 +12,9 @@ services:
     ports:
       - ${DB_PORT}:${DB_PORT}
   rest-api:
+    build:
+      context: ../../rest-api
+      dockerfile: ../rest-api/RestAPI_ProductionDockerfile
     image: trilbysir/ezge-rest-api-repo:latest
     environment:
       - API_PORT=${API_PORT}
