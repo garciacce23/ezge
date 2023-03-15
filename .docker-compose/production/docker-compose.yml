@@ -5,17 +5,19 @@ services:
     build:
       context: ../../database
       dockerfile: ../database/MongoDB_ProductionDockerfile
-    image: trilbysir/ezge-db-repo:latest
+    image: 470475726333.dkr.ecr.us-east-1.amazonaws.com/ezge-db-repo:latest
+    #image: trilbysir/ezge-db-repo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     ports:
       - ${DB_PORT}:${DB_PORT}
-  rest-api:
+  api:
     build:
-      context: ../../rest-api
-      dockerfile: ../rest-api/RestAPI_ProductionDockerfile
-    image: trilbysir/ezge-rest-api-repo:latest
+      context: ../../api
+      dockerfile: ../api/RestAPI_ProductionDockerfile
+    image: 470475726333.dkr.ecr.us-east-1.amazonaws.com/ezge-api-repo:latest
+    #image: trilbysir/ezge-rest-api-repo:latest
     environment:
       - API_PORT=${API_PORT}
       - DB_HOST=${DB_HOST}
@@ -26,3 +28,23 @@ services:
       - ${API_PORT}:${API_PORT}
     depends_on:
       - database
+  proxy:
+    build:
+      context: ../../proxy
+      dockerfile: ../proxy/Proxy_ProductionDockerfile
+    image: 470475726333.dkr.ecr.us-east-1.amazonaws.com/ezge-proxy-repo:latest
+    #image: trilbysir/ezge-proxy-repo:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+      - database
+
+x-aws-cloudformation:
+  Resources:
+    ApiTCP443Listener:
+      Properties:
+        Certificates:
+          - CertificateArn: ${CERTIFICATE_ARN}
+        Protocol: "TLS"
+        Port: 443

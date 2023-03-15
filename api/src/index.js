@@ -21,10 +21,10 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 // -- Populate Catalogue and Roster -- //
-const CourseModel = require('./models/courseModel');
-const StudentModel = require('./models/studentModel');
-const catalogue = require('./data/course_catalogue.json');
-const roster = require('./data/student_roster.json');
+const CourseModel = require('../models/courseModel');
+const StudentModel = require('../models/studentModel');
+const catalogue = require('../data/course_catalogue.json');
+const roster = require('../data/student_roster.json');
 
 Promise.all([
     CourseModel.insertMany(catalogue),
@@ -42,8 +42,8 @@ Promise.all([
     });
 
 // -- Populate XModule Screens -- //
-const ScreenModel = require('./models/screenModel');
-const screens = require('./data/screens.json');
+const ScreenModel = require('../models/screenModel');
+const screens = require('../data/screens.json');
 ScreenModel.insertMany(screens)
     .then (() => {
         console.log("Populated XModule Screens");

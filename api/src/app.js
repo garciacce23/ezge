@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 // Import Routes
-const CourseRoutes = require('./routes/courseRoutes');
-const StudentRoutes = require('./routes/studentRoutes');
-const screenRoutes = require("./routes/screenRoutes");
+const CourseRoutes = require('../routes/courseRoutes');
+const StudentRoutes = require('../routes/studentRoutes');
+const screenRoutes = require("../routes/screenRoutes");
 
 const app = express();
 
