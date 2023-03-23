@@ -62,7 +62,7 @@ const CourseModel = require('../models/courseModel');
 
 /**
  * @swagger
- * /courses/:
+ * /courses:
  *   post:
  *     tags:
  *       - Courses

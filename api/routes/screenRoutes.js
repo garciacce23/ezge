@@ -82,7 +82,7 @@ const getScreen = async (req, res, next) => {
 
 /**
  * @swagger
- * /api/screens:
+ * /screens:
  *   post:
  *     summary: Create a new screen
  *     tags: [Screens]
@@ -135,7 +135,7 @@ router.post('/', async (req, res) => {
 
 /**
  * @swagger
- * /api/screens:
+ * /screens:
  *   get:
  *     summary: Get all screens
  *     tags: [Screens]
@@ -163,7 +163,7 @@ router.get('/', async (req, res) => {
 
 /**
  * @swagger
- * /api/screens/{id}:
+ * /screens/{id}:
  *   get:
  *     summary: Get a screen by its ID
  *     tags: [Screens]
@@ -193,7 +193,7 @@ router.get('/:id', getScreen, (req, res) => {
 
 /**
  * @swagger
- * /api/screens/{id}:
+ * /screens/{id}:
  *   put:
  *     summary: Update a screen by its ID
  *     tags: [Screens]
@@ -296,7 +296,7 @@ router.put('/:id', getScreen, async (req, res) => {
 
 /**
  * @swagger
- * /api/screens/{id}:
+ * /screens/{id}:
  *   delete:
  *     summary: Delete a screen by its ID
  *     tags: [Screens]
