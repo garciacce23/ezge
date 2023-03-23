@@ -28,7 +28,6 @@ services:
     build:
       context: ../../proxy
       dockerfile: ../proxy/Proxy_Dockerfile
-    image: trilbysir/ezge-proxy-repo:latest
     ports:
       - "80:80"
     depends_on:

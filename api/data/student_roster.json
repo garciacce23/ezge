@@ -1,5 +1,5 @@
 [{
-  "studentId": "12345",
+  "studentID": "12345",
   "name": {
     "first": "John",
     "last": "Doe"

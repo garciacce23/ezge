@@ -2,27 +2,46 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-// Import Routes
-const CourseRoutes = require('../routes/courseRoutes');
-const StudentRoutes = require('../routes/studentRoutes');
-const screenRoutes = require("../routes/screenRoutes");
+// Swagger Requirements
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDefinition = require('./swaggerDefinition');
+
 
 const app = express();
-
 app.use(bodyParser.json());
 
-// Set up routes
+
+// Set up routes //
+const CourseRoutes = require('../routes/courseRoutes');
 app.use('/api/courses', CourseRoutes);
+
+const StudentRoutes = require('../routes/studentRoutes');
 app.use('/api/students', StudentRoutes);
+
+const screenRoutes = require("../routes/screenRoutes");
 app.use('/api/screens', screenRoutes);
 
-// Serve the index.html file for the root path "/"
+// Splash Page
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
 app.get('/test', (req, res) => {
     res.send('Rizzy GE Test Page');
 });
+
+
+// Generate API documentation based on routes and Swagger definition
+const options = {
+    swaggerDefinition,
+    apis: [path.join(__dirname, '../routes/*.js')],
+};
+
+const swaggerSpec = swaggerJsdoc(options);
+// Serve Swagger documentation at /api-docs
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+console.log(swaggerSpec);
 
 // Export app
 module.exports = app;
