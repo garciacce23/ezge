@@ -145,21 +145,27 @@ router.get('/', async (req, res) => {
 
 /**
  * @swagger
- * /courses/{id}:
+ * /courses/{key}/{value}:
  *   get:
  *     tags:
  *       - Courses
- *     summary: Get a course by its POS_ID
+ *     summary: Get a course by a specified key and value
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: key
  *         schema:
  *           type: string
  *         required: true
- *         description: Course POS_ID
+ *         description: Key to search by
+ *       - in: path
+ *         name: value
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Value of the specified key
  *     responses:
  *       200:
- *         description: Course
+ *         description: Course found
  *         content:
  *           application/json:
  *             schema:
@@ -169,11 +175,13 @@ router.get('/', async (req, res) => {
  *       500:
  *         description: Internal server error
  */
-router.get('/:id', async (req, res) => {
-    const { id } = req.params;
+router.get('/:key/:value', async (req, res) => {
+    const { key, value } = req.params;
+    const query = {};
+    query[key] = value;
 
     try {
-        const course = await CourseModel.findOne({ POS_ID: id }).exec();
+        const course = await CourseModel.find(query).exec();
         if (!course) {
             return res.status(404).json({ error: 'Course not found' });
         }
@@ -183,52 +191,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-
-/**
- * @swagger
- * /courses/GE/{ge_attribute}:
- *   get:
- *     tags:
- *       - Courses
- *     summary: Get courses by their GE attribute
- *     parameters:
- *       - in: path
- *         name: ge_attribute
- *         schema:
- *           type: string
- *         required: true
- *         description: GE attribute
- *     responses:
- *       200:
- *         description: List of courses
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Course'
- *       404:
- *         description: No courses found
- *       500:
- *         description: Internal server error
- */
-router.get('/GE/:ge_attribute', async (req, res) => {
-    const { ge_attribute } = req.params;
-    const geAttribute = ge_attribute;
-
-    try {
-        const courses = await CourseModel.find({ GE_ATTRIBUTE: geAttribute }).exec();
-        console.log(req);
-        console.log(geAttribute);
-        console.log(courses);
-        if (courses.length === 0) {
-            return res.status(404).json({ error: 'No courses found' });
-        }
-        res.json(courses);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
 
 
 /**

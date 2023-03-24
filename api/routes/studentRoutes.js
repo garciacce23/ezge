@@ -181,19 +181,25 @@ router.get('/', async (req, res, next) => {
 
 /**
  * @swagger
- * /students/{id}:
+ * /students/{key}/{value}:
  *   get:
  *     tags:
  *       - Students
- *     summary: Get a student by their student ID
- *     description: Retrieve a student by their student ID
+ *     summary: Get a student by a specified key and value
+ *     description: Retrieve a student by a specified key and value
  *     parameters:
  *       - in: path
- *         name: id
+ *         name: key
  *         schema:
  *           type: string
  *         required: true
- *         description: Student ID
+ *         description: Key to search by
+ *       - in: path
+ *         name: value
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Value of the specified key
  *     responses:
  *       200:
  *         description: Student found
@@ -206,19 +212,22 @@ router.get('/', async (req, res, next) => {
  *       500:
  *         description: Internal server error
  */
-router.get('/:id', async (req, res) => {
-    const { id } = req.params;
+router.get('/:key/:value', async (req, res) => {
+    const { key, value } = req.params;
+    const query = {};
+    query[key] = value;
 
     try {
-        const course = await StudentModel.findOne({ studentID: id }).exec();
-        if (!course) {
+        const student = await StudentModel.find(query).exec();
+        if (!student) {
             return res.status(404).json({ error: 'Student not found' });
         }
-        res.json(course);
+        res.json(student);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 
 

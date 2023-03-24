@@ -20,3 +20,6 @@ db.screens.createIndex({ 'metadata.ID': 1 }, { unique: true });
 
 db.createCollection('ajaxContent');
 db.ajaxContent.createIndex({ 'metadata.ID': 1 }, { unique: true });
+
+db.createCollection('ajaxUpdate');
+db.ajaxContent.createIndex({ 'metadata.ID': 1 }, { unique: true });
