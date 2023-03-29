@@ -7,9 +7,6 @@
   "courses": {
     "completed": [
       {
-        "POS_ID": 992
-      },
-      {
         "POS_ID": 1798
       }
     ],
@@ -23,7 +20,13 @@
     ],
     "wishList": [
       {
-        "POS_ID": 3032
+        "POS_ID": 992
+      },
+      {
+        "POS_ID": 1798
+      },
+      {
+        "POS_ID": 2166
       }
     ]
   },
