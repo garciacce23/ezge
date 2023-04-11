@@ -1,14 +1,11 @@
 [{
-  "studentId": "12345",
+  "studentID": "123456789",
   "name": {
     "first": "John",
     "last": "Doe"
   },
   "courses": {
     "completed": [
-      {
-        "POS_ID": 992
-      },
       {
         "POS_ID": 1798
       }
@@ -23,10 +20,48 @@
     ],
     "wishList": [
       {
-        "POS_ID": 3032
+        "POS_ID": 992
+      },
+      {
+        "POS_ID": 1798
+      },
+      {
+        "POS_ID": 2166
       }
     ]
   },
   "major": "Computer Science",
   "standing": "Junior"
+},
+{
+  "studentID": "234567890",
+  "name": {
+    "first": "Max",
+    "last": "Tsai"
+  },
+  "courses": {
+    "completed": [
+      {
+        "POS_ID": 1224
+      },
+      {
+        "POS_ID": 1798
+      }
+    ],
+    "inProgress": [
+      {
+        "POS_ID": 1225
+      },
+      {
+        "POS_ID": 2456
+      }
+    ],
+    "wishList": [
+      {
+        "POS_ID": 3032
+      }
+    ]
+  },
+  "major": "Computer Science",
+  "standing": "Senior"
 }]

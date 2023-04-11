@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const CourseModel = require('./courseModel'); // Import CourseModel
 
 const studentSchema = new mongoose.Schema({
-    studentId: {type: String, required: true, unique: true},
+    studentID: {type: String, required: true, unique: true},
     name: {
         first: {type: String, required: true},
         last: {type: String, required: true},
@@ -104,7 +104,7 @@ module.exports = StudentModel;
 
 `
     [{
-  "studentId": "12345",
+  "studentID": "12345",
   "name": {
     "first": "John",
     "last": "Doe"

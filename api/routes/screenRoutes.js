@@ -20,20 +20,88 @@ const getScreen = async (req, res, next) => {
     }
 };
 
-// GET all screens
-router.get('/', async (req, res) => {
-    try {
-        const screens = await ScreenModel.find();
-        res.json(screens);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
 
-// GET one screen
-router.get('/:id', getScreen, (req, res) => {
-    res.json(res.screen);
-});
+/**
+ * @swagger
+ * tags:
+ *   - name: Screens
+ *     description: Screen related routes
+ * components:
+ *   schemas:
+ *     Screen:
+ *       type: object
+ *       properties:
+ *         metadata:
+ *           type: object
+ *           required: true
+ *           properties:
+ *             version:
+ *               type: string
+ *               required: true
+ *             ID:
+ *               type: string
+ *               required: true
+ *         header:
+ *           type: array
+ *           items: {}
+ *         elementFields:
+ *           type: object
+ *         bookmarkData:
+ *           type: string
+ *         content:
+ *           type: array
+ *           items: {}
+ *         regionContent:
+ *           type: array
+ *           items: {}
+ *         contentContainerWidth:
+ *           type: string
+ *           enum: [narrow, medium, wide, full]
+ *         contentStyle:
+ *           type: string
+ *           enum: [focal, nonfocal]
+ *         contentBackgroundImage:
+ *           type: object
+ *         contentBackgroundColor:
+ *           type: string
+ *         bodyBackgroundImage:
+ *           type: object
+ *         bodyBackgroundColor:
+ *           type: string
+ *         footerTextColor:
+ *           type: string
+ *         hideBackToTop:
+ *           type: boolean
+ *         backToTopBackgroundColor:
+ *           type: string
+ *         backToTopTextColor:
+ *           type: string
+ */
+
+
+
+/**
+ * @swagger
+ * /screens:
+ *   post:
+ *     summary: Create a new screen
+ *     tags: [Screens]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Screen'
+ *     responses:
+ *       201:
+ *         description: The created screen
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Screen'
+ *       400:
+ *         description: Bad request
+ */
 
 // CREATE a new screen
 router.post('/', async (req, res) => {
@@ -64,8 +132,97 @@ router.post('/', async (req, res) => {
     }
 });
 
+
+/**
+ * @swagger
+ * /screens:
+ *   get:
+ *     summary: Get all screens
+ *     tags: [Screens]
+ *     responses:
+ *       200:
+ *         description: List of all screens
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Screen'
+ */
+
+// GET all screens
+router.get('/', async (req, res) => {
+    try {
+        const screens = await ScreenModel.find();
+        res.json(screens);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+
+/**
+ * @swagger
+ * /screens/{id}:
+ *   get:
+ *     summary: Get a screen by its ID
+ *     tags: [Screens]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID of the screen
+ *     responses:
+ *       200:
+ *         description: The requested screen
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Screen'
+ *       404:
+ *         description: Screen not found
+ */
+
+// GET one screen
+router.get('/:id', getScreen, (req, res) => {
+    res.json(res.screen);
+});
+
+
+/**
+ * @swagger
+ * /screens/{id}:
+ *   put:
+ *     summary: Update a screen by its ID
+ *     tags: [Screens]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID of the screen
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Screen'
+ *     responses:
+ *       200:
+ *         description: The updated screen
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Screen'
+ *       400:
+ *         description: Bad request
+ */
+
 // UPDATE a screen
-router.patch('/:id', getScreen, async (req, res) => {
+router.put('/:id', getScreen, async (req, res) => {
     try {
         if (req.body.metadata != null) {
             res.screen.metadata = req.body.metadata;
@@ -135,6 +292,35 @@ router.patch('/:id', getScreen, async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 });
+
+
+/**
+ * @swagger
+ * /screens/{id}:
+ *   delete:
+ *     summary: Delete a screen by its ID
+ *     tags: [Screens]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID of the screen
+ *     responses:
+ *       200:
+ *         description: Deleted screen
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Deleted Screen
+ *       500:
+ *         description: Server error
+ */
 
 // DELETE a screen
 router.delete('/:id', getScreen, async (req, res) => {

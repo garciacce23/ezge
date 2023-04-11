@@ -5,18 +5,18 @@ services:
     build:
       context: ../../database
       dockerfile: ../database/MongoDB_ProductionDockerfile
-    image: 470475726333.dkr.ecr.us-east-1.amazonaws.com/ezge-db-repo:latest
+    image: public.ecr.aws/g1r4c1j9/ezge-db-repo:latest
     #image: trilbysir/ezge-db-repo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-    ports:
-      - ${DB_PORT}:${DB_PORT}
+    #ports:
+      #- ${DB_PORT}:${DB_PORT}
   api:
     build:
       context: ../../api
       dockerfile: ../api/RestAPI_ProductionDockerfile
-    image: 470475726333.dkr.ecr.us-east-1.amazonaws.com/ezge-api-repo:latest
+    image: public.ecr.aws/g1r4c1j9/ezge-api-repo:latest
     #image: trilbysir/ezge-rest-api-repo:latest
     environment:
       - API_PORT=${API_PORT}
@@ -28,23 +28,96 @@ services:
       - ${API_PORT}:${API_PORT}
     depends_on:
       - database
-  proxy:
-    build:
-      context: ../../proxy
-      dockerfile: ../proxy/Proxy_ProductionDockerfile
-    image: 470475726333.dkr.ecr.us-east-1.amazonaws.com/ezge-proxy-repo:latest
-    #image: trilbysir/ezge-proxy-repo:latest
-    ports:
-      - "80:80"
-    depends_on:
-      - api
-      - database
 
 x-aws-cloudformation:
   Resources:
+    # Overlay ApiTCP443Listener to use the HTTPS protocol and attach ACM Certificate
     ApiTCP443Listener:
       Properties:
         Certificates:
           - CertificateArn: ${CERTIFICATE_ARN}
-        Protocol: "TLS"
+        Protocol: HTTPS
         Port: 443
+
+    # HTTP Redirect Listener
+    ApiHTTPListener:
+      Type: AWS::ElasticLoadBalancingV2::Listener
+      Properties:
+        LoadBalancerArn:
+          Ref: LoadBalancer
+        Port: 80
+        Protocol: HTTP
+        DefaultActions:
+          - Type: redirect
+            RedirectConfig:
+              Protocol: HTTPS
+              Port: 443
+              Host: '#{host}'
+              Path: '/#{path}'
+              Query: '#{query}'
+              StatusCode: HTTP_301
+
+    # Add a new security group for the database
+    DatabaseNetwork:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupDescription: ezgebackend Security Group for database network
+        VpcId: vpc-013baf8f7947343ad
+        Tags:
+          - Key: com.docker.compose.project
+            Value: ezgebackend
+          - Key: com.docker.compose.network
+            Value: ezgebackend_database
+
+    # Add ingress rules for the database security group
+    DatabaseNetworkIngress:
+      Type: AWS::EC2::SecurityGroupIngress
+      Properties:
+        Description: Allow communication within network database
+        GroupId:
+          Ref: DatabaseNetwork
+        IpProtocol: "-1"
+        SourceSecurityGroupId:
+          Ref: DefaultNetwork
+
+    # Overlay Default 443 Ingress to allow traffic to the ALB on ports 80 and 443
+    Default443Ingress:
+      Properties:
+        Description: Allow traffic to the ALB on ports 80 and 443
+        FromPort: 80
+        IpProtocol: TCP
+        ToPort: 443
+
+    # Add a new ingress rule for HTTP to HTTPS redirection
+    Default80Ingress:
+      Type: AWS::EC2::SecurityGroupIngress
+      Properties:
+        CidrIp: 0.0.0.0/0
+        Description: Allow traffic to the ALB on port 80 for HTTP to HTTPS redirection
+        FromPort: 80
+        GroupId:
+          Ref: DefaultNetwork
+        IpProtocol: TCP
+        ToPort: 80
+
+    # Overlay the ApiService properties to use the new DatabaseNetwork security group
+    ApiService:
+      Properties:
+        NetworkConfiguration:
+          AwsvpcConfiguration:
+            SecurityGroups:
+              - Ref: DefaultNetwork
+              - Ref: DatabaseNetwork
+      DependsOn:
+        - ApiTCP443Listener
+        - DatabaseService
+        - ApiHTTPListener
+
+    # Overlay the DatabaseService properties to use the new DatabaseNetwork security group
+    DatabaseService:
+      Properties:
+        NetworkConfiguration:
+          AwsvpcConfiguration:
+            SecurityGroups:
+              - Ref: DefaultNetwork
+              - Ref: DatabaseNetwork
