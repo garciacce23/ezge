@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "ID": "EZGE_course_selec"
+  },
+  "content": [
+    {
+      "height": "fluid",
+      "content": [
+        {
+          "heading": "Course Selection",
+          "fontSize": "2rem",
+          "marginTop": "xloose",
+          "elementType": "heroHeading",
+          "textAlignment": "center"
+        }
+      ],
+      "elementType": "hero"
+    },
+    {
+      "heading": "Sub-area name",
+      "elementType": "blockHeading",
+      "headingLevel": 1,
+      "headingTextColor": "#880808",
+      "headingFontWeight": "bold"
+    },
+    {
+      "id": "filters",
+      "content": [
+        {
+          "title": "Filters",
+          "content": [
+            {
+              "id": "filters_con",
+              "content": [
+                {
+                  "id": "filters_form",
+                  "items": [
+                    {
+                      "name": "devices",
+                      "label": "Semester Typically offered:",
+                      "value": [
+                        "1",
+                        "2"
+                      ],
+                      "options": {
+                        "1": "Fall",
+                        "2": "Spring"
+                      },
+                      "description": "",
+                      "elementType": "formInputCheckboxGroup",
+                      "optionDescriptions": {
+                        "1": "",
+                        "2": ""
+                      }
+                    },
+                    {
+                      "name": "devices",
+                      "label": "Order By:",
+                      "value": [
+
+                      ],
+                      "options": {
+                        "1": "Course Name",
+                        "2": "Course Subject",
+                        "3": "Units"
+                      },
+                      "description": "",
+                      "elementType": "formInputCheckboxGroup",
+                      "optionDescriptions": {
+                        "1": "",
+                        "2": "",
+                        "3": ""
+                      }
+                    },
+                    {
+                      "name": "assisted_multiselect",
+                      "label": "Subject(s):",
+                      "options": [
+                        {
+                          "label": "Subject1",
+                          "value": "subject1"
+                        },
+                        {
+                          "label": "Subject2",
+                          "value": "subject2"
+                        },
+                        {
+                          "label": "Subject3",
+                          "value": "subject3"
+                        }
+                      ],
+                      "description": "Select one or more",
+                      "elementType": "formInputAssistedMultiselect"
+                    }
+                  ],
+                  "buttons": [
+                    {
+                      "name": "apply_button",
+                      "title": "Apply filters",
+                      "minWidth": "8rem",
+                      "buttonType": "submit",
+                      "actionStyle": "constructive",
+                      "elementType": "formButton",
+                      "borderRadius": "loose"
+                    }
+                  ],
+                  "elementType": "form"
+                }
+              ],
+              "padding": "medium",
+              "borderStyle": "none",
+              "elementType": "container",
+              "borderRadius": "loose",
+              "marginBottom": "none",
+              "wrapperStyle": "subfocal",
+              "paddingBottom": "xxtight"
+            }
+          ],
+          "elementType": "collapsible",
+          "borderTopStyle": "none",
+          "disclosureIcon": "chevron",
+          "borderBottomStyle": "none",
+          "titleHeadingLevel": "3"
+        }
+      ],
+      "borderStyle": "solid",
+      "elementType": "container",
+      "paddingLeft": "medium",
+      "borderRadius": "loose",
+      "marginBottom": "xtight",
+      "paddingRight": "medium"
+    },
+    {
+      "heading": "Courses",
+      "elementType": "blockHeading",
+      "headingLevel": 2,
+      "headingTextColor": "#880808",
+      "headingFontWeight": "bold"
+    },
+    {
+      "label": "",
+      "title": "{course_name1}",
+      "content": [
+        {
+          "id": "filters_con",
+          "content": [
+            {
+              "html": "<p>course description<br><br>Units: <br>Course Typically Offered: <br> GE Area: <br><br> </p>",
+              "elementType": "html"
+            },
+            {
+              "link": {
+                "relativePath": ""
+              },
+              "title": "Select",
+              "actionStyle": "constructive",
+              "elementType": "linkButton",
+              "borderRadius": "loose"
+            }
+          ],
+          "padding": "medium",
+          "borderStyle": "none",
+          "elementType": "container",
+          "borderRadius": "loose",
+          "wrapperStyle": "subfocal"
+        }
+      ],
+      "description": "",
+      "elementType": "collapsible"
+    },
+    {
+      "label": "",
+      "title": "{course_name2+}",
+      "content": [
+        {
+          "id": "filters_con",
+          "content": [
+            {
+              "html": "<p>course description<br><br>Units: <br>Course Typically Offered: <br> GE Area: <br><br> </p>",
+              "elementType": "html"
+            },
+            {
+              "link": {
+                "relativePath": ""
+              },
+              "title": "Select",
+              "actionStyle": "constructive",
+              "elementType": "linkButton",
+              "borderRadius": "loose"
+            }
+          ],
+          "padding": "medium",
+          "borderStyle": "none",
+          "elementType": "container",
+          "borderRadius": "loose",
+          "wrapperStyle": "subfocal"
+        }
+      ],
+      "description": "",
+      "elementType": "collapsible",
+      "borderTopStyle": "none"
+    }
+  ],
+  "contentContainerWidth": "medium"
+}

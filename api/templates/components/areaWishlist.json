@@ -1,0 +1,11 @@
+{
+  "title": "Area_Class_Name",
+  "description": "Units: ",
+  "accessoryButton": {
+    "link": {
+      "relativePath": ""
+    },
+    "accessoryIcon": "delete",
+    "confirmationMessage": "Are you sure you want to delete this?"
+  }
+}

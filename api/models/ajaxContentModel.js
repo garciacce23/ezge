@@ -17,7 +17,7 @@ const ajaxContentSchema = new mongoose.Schema({
         type: [String],
         required: true
     }
-}, { collection: 'ajaxContent' });
+}, {versionKey: false});//{ collection: 'ajaxContent' },
 
 const AJAXContent = mongoose.model('AJAXContent', ajaxContentSchema);
 

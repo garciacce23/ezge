@@ -142,6 +142,16 @@ router.get('/', async (req, res) => {
     }
 });
 
+// TODO - Swagger documentation
+router.get('/GEs', async (req, res) => {
+    // Get all the GE_ATTRIBUTE values in the catalogue
+    try {
+        const GEs = await CourseModel.distinct('GE_ATTRIBUTE').exec();
+        res.json(GEs);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 /**
  * @swagger

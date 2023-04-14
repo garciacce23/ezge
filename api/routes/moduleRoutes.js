@@ -1,11 +1,10 @@
-// DATED
-
 const express = require('express');
+const ModuleController = require('../controllers/moduleController');
 const router = express.Router();
-const ajaxContentModel = require('../models/ajaxContentModel');
+
 const axios = require('axios'); // For utilizing student and course api routes
 const config = require('../src/config');
-const getWishlistedCourses = require('../helpers/getWishlistedCourses');
 
+router.get('/:screen', ModuleController.getModuleScreen);
 
 module.exports = router;

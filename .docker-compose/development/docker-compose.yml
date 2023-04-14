@@ -24,12 +24,3 @@ services:
       - ${API_PORT}:${API_PORT}
     depends_on:
       - database
-  proxy:
-    build:
-      context: ../../proxy
-      dockerfile: ../proxy/Proxy_Dockerfile
-    ports:
-      - "80:80"
-    depends_on:
-      - api
-      - database

@@ -1,5 +1,8 @@
-[
 {
+  "metadata": {
+    "version": "2.0",
+    "ID": "EZGE_areas"
+  },
   "content": [
     {
       "id": "foundation",
@@ -28,12 +31,18 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://cdn-icons-png.flaticon.com/512/3889/3889548.png"
+                      },
                       "title": "A1: Oral Communications",
                       "description": ""
                     },
                     {
                       "link": {
                         "relativePath": ""
+                      },
+                      "image": {
+                        "url": "https://cdn-icons-png.flaticon.com/512/3889/3889548.png"
                       },
                       "title": "A2: Written Communication",
                       "description": ""
@@ -54,11 +63,17 @@
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "none",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "imageBorderRadius": "full",
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -74,9 +89,7 @@
                               "content": [
                                 {
                                   "items": [
-                                    {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/A1"
-                                    }
+                                    "!A1areaWishlistJSON"
                                   ],
                                   "listStyle": "separated",
                                   "elementType": "list",
@@ -92,7 +105,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/A2"
+                                      "title": "A2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "A2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -109,7 +141,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/A3"
+                                      "title": "A3Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "A3Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -126,7 +177,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B4"
+                                      "title": "B4Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "B4Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -239,7 +309,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B1"
+                                      "title": "B1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "B1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -256,7 +345,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B2"
+                                      "title": "B2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "B2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -272,7 +380,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B3"
+                                    {
+                                      "title": "B3Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "B3Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -372,7 +500,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/C1"
+                                    {
+                                      "title": "C1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "C1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -388,7 +536,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/C2"
+                                    {
+                                      "title": "C2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "C2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -517,7 +685,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/D1"
+                                    {
+                                      "title": "D1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "D1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -533,7 +721,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/D2"
+                                    {
+                                      "title": "D2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "D2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -613,7 +821,27 @@
                       "content": [
                         {
                           "items": [
-                            {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/E"
+                            {
+                              "title": "EClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
+                            },
+                            {
+                              "title": "EClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
                             }
                           ],
                           "listStyle": "separated",
@@ -686,7 +914,27 @@
                       "content": [
                         {
                           "items": [
-                            {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/F"
+                            {
+                              "title": "FClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
+                            },
+                            {
+                              "title": "FClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
                             }
                           ],
                           "listStyle": "separated",
@@ -727,10 +975,5 @@
       "elementType": "container"
     }
   ],
-  "metadata": {
-    "version": "2.0",
-    "ID": "GE_AREAS"
-  },
-  "contentContainerWidth": "narrow"
+  "contentContainerWidth": "medium"
 }
-]
