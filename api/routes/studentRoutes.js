@@ -137,12 +137,31 @@ const StudentModel = require('../models/studentModel');
  */
 router.post('/', async (req, res, next) => {
     const newStudent = new StudentModel({
-        // Student model fields
+        studentID: req.body.studentID,
+        name: {
+            first: req.body.name.first,
+            last: req.body.name.last
+        },
+        courses: {
+            completed: req.body.courses.completed,
+            inProgress: req.body.courses.inProgress,
+            wishList: req.body.courses.wishList
+        },
+        undergradRequirements: req.body.undergradRequirements
+            ? {
+                completed: req.body.undergradRequirements.completed,
+                inProgress: req.body.undergradRequirements.inProgress,
+                onWishList: req.body.undergradRequirements.onWishList,
+                incomplete: req.body.undergradRequirements.incomplete,
+            }
+            : undefined,
+        major: req.body.major,
+        standing: req.body.standing,
     });
 
     try {
         await newStudent.save();
-        res.json(newStudent);
+        res.status(201).json(newStudent);
     } catch (error) {
         console.log(error);
         next(error);

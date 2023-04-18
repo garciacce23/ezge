@@ -14,14 +14,18 @@ async function generateAreasScreen() {
     // Get student id from JWT...
     const studentID = 123456789;
 
+    AreasJSON.metadata.studentID = studentID;
+
     // Get GE Areas
     const { data: GEAreas } = await axios.get(`http://localhost:${config.PORT}/api/courses/GEs`);
 
 
     let path;
 
+    console.log(`HELPER GEAreas: `, GEAreas)
+
     // Iterate over GE areas and generate json for each
-    for (const area in GEAreas) {
+    for (const area of GEAreas) {
 
         //let currentAreaWishlist = AreaWishlistJSON;
 
@@ -35,15 +39,15 @@ async function generateAreasScreen() {
 
 
         // Iterate over wishlisted courses in area and generate json for each
-        for (const course in wishlistedCourses) {
+        for (const course of wishlistedCourses) {
             console.log(`course: `, course);
-            const courseItem = wishlistedCourses[course];
+            //const courseItem = wishlistedCourses[course];
 
-            console.log(`course title: `, courseItem.CRSE);
+            console.log(`course title: `, course.CRSE);
 
             const item = {
-                "title": courseItem.CRSE,
-                "description": `Units: ${courseItem.UNITS_RANGE}`, // Get units from course
+                "title": course.CRSE,
+                "description": `Units: ${course.UNITS_RANGE}`, // Get units from course
                 "accessoryButton": {
                     "link": {
                         "relativePath": "" // Get pos_ID for course
@@ -77,38 +81,65 @@ async function generateAreasScreen() {
                 break;
             case "B4":
                 // Generate B4 Wishlist JSON
+                console.log(`AreasJSON: `, AreasJSON.content[0].content[1].content[0].content[2]
+                    .content[0].content[0].tabs[3].content[0].items);
+
                 AreasJSON.content[0].content[1].content[0].content[2]
                     .content[0].content[0].tabs[3].content[0].items = items;
+                console.log(`B4 WISHLIST`);
+
+                console.log(`items: `, items);
+
                 break;
             case "B1":
                 // Generate B1 Wishlist JSON
+                AreasJSON.content[1].content[1].content[0].content[2]
+                    .content[0].content[0].tabs[0].content[0].items = items;
                 break;
             case "B2":
                 // Generate B2 Wishlist JSON
+                AreasJSON.content[1].content[1].content[0].content[2]
+                    .content[0].content[0].tabs[1].content[0].items = items;
                 break;
             case "B3":
                 // Generate B3 Wishlist JSON
+                AreasJSON.content[1].content[1].content[0].content[2]
+                    .content[0].content[0].tabs[2].content[0].items = items;
                 break;
             case "C1":
                 // Generate C1 Wishlist JSON
+                AreasJSON.content[1].content[2].content[0].content[2]
+                    .content[0].content[0].tabs[0].content[0].items = items;
                 break;
             case "C2":
                 // Generate C2 Wishlist JSON
+                AreasJSON.content[1].content[2].content[0].content[2]
+                    .content[0].content[0].tabs[1].content[0].items = items;
                 break;
             case "D1":
                 // Generate D1 Wishlist JSON
+                AreasJSON.content[1].content[3].content[0].content[2]
+                    .content[0].content[0].tabs[0].content[0].items = items;
                 break;
             case "D2":
                 // Generate D2 Wishlist JSON
+                AreasJSON.content[1].content[3].content[0].content[2]
+                    .content[0].content[0].tabs[1].content[0].items = items;
                 break;
             case "E":
                 // Generate E Wishlist JSON
+                AreasJSON.content[1].content[4].content[0].content[2]
+                    .content[0].content[0].items = items;
                 break;
             case "F":
                 // Generate F Wishlist JSON
+                AreasJSON.content[1].content[5].content[0].content[2]
+                    .content[0].content[0].items = items;
                 break;
             default:
             // Generate default Wishlist JSON
+                console.log(`Defaulting - No area found!`);
+
         }
 
         // Add items to wishlist
@@ -117,7 +148,9 @@ async function generateAreasScreen() {
 
 
     // Return Modified Screen JSON
+    console.log(`AREAS JSON: `, AreasJSON);
     return(AreasJSON);
+
 
 }
 
