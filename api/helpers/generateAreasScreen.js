@@ -46,11 +46,12 @@ async function generateAreasScreen() {
             console.log(`course title: `, course.CRSE);
 
             const item = {
-                "title": course.CRSE,
-                "description": `Units: ${course.UNITS_RANGE}`, // Get units from course
+                "title": course.CRSE_TITLE,
+                "description": `Units: ${course.UNITS_RANGE}
+                Typically Offered: ${course.CRSE_TYP_OFFR}`,
                 "accessoryButton": {
                     "link": {
-                        "relativePath": "" // Get pos_ID for course
+                        "relativePath": `../../students/wishlist/${studentID}/${course.POS_ID}` // Get pos_ID for course
                     },
                     "accessoryIcon": "delete",
                     "confirmationMessage": "Are you sure you want to delete this?"
@@ -145,6 +146,30 @@ async function generateAreasScreen() {
         // Add items to wishlist
         //AreasJSON.path = items;
     }
+
+    // Go back in and add C1/C2 Tab JSON
+    let c12 = [];
+
+    let c1s = AreasJSON.content[1].content[2].content[0].content[2]
+        .content[0].content[0].tabs[0].content[0].items;
+    for (item in c1s) {
+        if (item > 0) {
+            c12.push(c1s[item]);
+        }
+    }
+
+    let c2s = AreasJSON.content[1].content[2].content[0].content[2]
+        .content[0].content[0].tabs[1].content[0].items;
+
+    for (item in c2s) {
+        if (item > 0) {
+            c12.push(c2s[item]);
+        }
+    }
+
+
+    AreasJSON.content[1].content[2].content[0].content[2].
+        content[0].content[0].tabs[2].content[0].items = c12;
 
 
     // Return Modified Screen JSON

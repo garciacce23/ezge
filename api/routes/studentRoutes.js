@@ -248,7 +248,9 @@ router.get('/:key/:value', async (req, res) => {
 });
 
 
+router.get('/:wishlist/:studentID/:POS_ID', async (req, res) => {
 
+});
 
 /**
  * @swagger

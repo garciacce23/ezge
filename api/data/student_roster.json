@@ -32,28 +32,116 @@
         "POS_ID": 753
       },
       {
-          "POS_ID": 510
+        "POS_ID": 510
       },
       {
-          "POS_ID": 1108
+        "POS_ID": 1108
       },
       {
-          "POS_ID": 205
+        "POS_ID": 205
       },
       {
-          "POS_ID": 194
+        "POS_ID": 194
       },
       {
-          "POS_ID": 2329
+        "POS_ID": 2329
       },
       {
-          "POS_ID": 20
+        "POS_ID": 20
       },
       {
-          "POS_ID": 219
+        "POS_ID": 219
       },
       {
-          "POS_ID": 21
+        "POS_ID": 21
+      },
+      {
+        "POS_ID": 218
+      },
+      {
+        "POS_ID": 222
+      },
+      {
+        "POS_ID": 230
+      },
+      {
+        "POS_ID": 195
+      },
+      {
+        "POS_ID": 198
+      },
+      {
+        "POS_ID": 199
+      }
+    ]
+  },
+  "undergradRequirements": {
+    "completed": [
+      {
+        "GE_ATTRIBUTE": "A2"
+      }
+    ],
+    "inProgress": [
+      {
+        "GE_ATTRIBUTE": "B1"
+      },
+      {
+        "GE_ATTRIBUTE": "B2"
+      }
+    ],
+    "onWishList": [
+      {
+        "GE_ATTRIBUTE": "D2"
+      },
+      {
+        "GE_ATTRIBUTE": "F"
+      },
+      {
+        "GE_ATTRIBUTE": "C2"
+      },
+      {
+        "GE_ATTRIBUTE": "C1"
+      },
+      {
+        "GE_ATTRIBUTE": "E"
+      },
+      {
+        "GE_ATTRIBUTE": "B2"
+      },
+      {
+        "GE_ATTRIBUTE": "B1"
+      },
+      {
+        "GE_ATTRIBUTE": "A1"
+      },
+      {
+        "GE_ATTRIBUTE": "B4"
+      },
+      {
+        "GE_ATTRIBUTE": "A2"
+      },
+      {
+        "GE_ATTRIBUTE": "A3"
+      },
+      {
+        "GE_ATTRIBUTE": "D1"
+      }
+    ],
+    "incomplete": [
+      {
+        "GE_ATTRIBUTE": "B1LS"
+      },
+      {
+        "GE_ATTRIBUTE": "IB"
+      },
+      {
+        "GE_ATTRIBUTE": "IC"
+      },
+      {
+        "GE_ATTRIBUTE": "ID"
+      },
+      {
+        "GE_ATTRIBUTE": "PRE21D2"
       }
     ]
   },

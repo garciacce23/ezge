@@ -1,9 +1,21 @@
 {
   "metadata": {
-    "version": "2.0",
-    "ID": "EZGE_course_selec"
+    "version": "2.0"
   },
   "content": [
+    {
+      "link": {
+        "relativePath": ""
+      },
+      "title": "Back",
+      "marginTop": "xloose",
+      "textColor": "#880808",
+      "actionStyle": "link",
+      "elementType": "linkButton",
+      "borderRadius": "loose",
+      "accessoryIcon": "dropleft",
+      "accessoryIconPosition": "left"
+    },
     {
       "height": "fluid",
       "content": [
@@ -37,7 +49,7 @@
                   "id": "filters_form",
                   "items": [
                     {
-                      "name": "devices",
+                      "name": "Sem_offered",
                       "label": "Semester Typically offered:",
                       "value": [
                         "1",
@@ -47,12 +59,7 @@
                         "1": "Fall",
                         "2": "Spring"
                       },
-                      "description": "",
-                      "elementType": "formInputCheckboxGroup",
-                      "optionDescriptions": {
-                        "1": "",
-                        "2": ""
-                      }
+                      "elementType": "formInputCheckboxGroup"
                     },
                     {
                       "name": "devices",

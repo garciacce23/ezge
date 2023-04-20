@@ -1,8 +1,6 @@
 {
   "metadata": {
-    "version": "2.0",
-    "ID": "EZGE_areas",
-    "studentID": "123456789"
+    "version": "2.0"
   },
   "content": [
     {
@@ -33,9 +31,10 @@
                         "relativePath": ""
                       },
                       "image": {
-                        "url": "https://cdn-icons-png.flaticon.com/512/3889/3889548.png"
+                        "url": "https://png2.cleanpng.com/sh/54dc78b9fe35d9899e775d3fa18a0e2a/L0KzQYm3VMA0N6tuj5H0aYP2gLBuTfNpbZRwRd9qcnuwc7F0kQV1baMygdV4boOwc73wkL1ieqUyfARuZX6whLrqi702aZQ4StVrN3PmdoKAUL45Omk7UKo7NUG4QoOAVMA1OGg9S6sALoDxd1==/kisspng-check-mark-computer-icons-clip-art-green-tick-5ac32cb7ccf170.8286882515227404078395.png"
                       },
                       "title": "A1: Oral Communications",
+                      "status": "available",
                       "description": ""
                     },
                     {
@@ -43,7 +42,7 @@
                         "relativePath": ""
                       },
                       "image": {
-                        "url": "https://cdn-icons-png.flaticon.com/512/3889/3889548.png"
+                        "url": "https://cdn-icons-png.flaticon.com/512/5801/5801495.png"
                       },
                       "title": "A2: Written Communication",
                       "description": ""
@@ -52,12 +51,18 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "A3: Critical Thinking",
                       "description": ""
                     },
                     {
                       "link": {
                         "relativePath": ""
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "B4: Quantitative Reasoning",
                       "description": ""
@@ -68,11 +73,10 @@
                   "imageWidth": "2.25rem",
                   "elementType": "statusList",
                   "imageHeight": "2.25rem",
-                  "imageMargin": "none",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "imageBorderRadius": "full",
                   "showAccessoryIcons": true,
                   "imageHorizontalPosition": "right"
                 },
@@ -90,7 +94,28 @@
                               "content": [
                                 {
                                   "items": [
-                                    "!A1areaWishlistJSON"
+                                    {
+                                      "title": "A1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "A1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    }
                                   ],
                                   "listStyle": "separated",
                                   "elementType": "list",
@@ -270,12 +295,18 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "B1: Physical Sciences",
                       "description": ""
                     },
                     {
                       "link": {
                         "relativePath": ""
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "B2: Life Sciences",
                       "description": ""
@@ -284,16 +315,24 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "B3: Laboratory Component",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -462,12 +501,18 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "C1: Arts",
                       "description": ""
                     },
                     {
                       "link": {
                         "relativePath": ""
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "C2: Humanities",
                       "description": ""
@@ -476,16 +521,24 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "C1/C2:",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -654,6 +707,9 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "D1: American History",
                       "description": ""
                     },
@@ -661,16 +717,24 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "D2: Social Science",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -803,16 +867,24 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "E:",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -896,16 +968,24 @@
                       "link": {
                         "relativePath": ""
                       },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
                       "title": "F:",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
