@@ -104,6 +104,11 @@ async function generateAreasScreen() {
 
 
 
+
+
+
+
+
     /// Assign Icons ///
     const checkmark
         = `https://www.ezge152.link/images/checkmark`;
@@ -115,10 +120,36 @@ async function generateAreasScreen() {
 
     // Get undergrad requirements
     const undergradRequirements = await getUndergradRequirements(studentID);
-    console.log(`undergradRequirements: `, undergradRequirements.incomplete);
+    console.log(`undergradRequirements: `, undergradRequirements);
 
     // Instantiate the AreaPathResolver
     const areaResolver = new AreaPathResolverClass();
+
+
+    const c1Completed = undergradRequirements.completed.filter(item => item.GE_ATTRIBUTE === 'C1').length;
+    const c2Completed = undergradRequirements.completed.filter(item => item.GE_ATTRIBUTE === 'C2').length;
+
+    const c1C2Completed = c1Completed + c2Completed;
+
+    const c1Progress = undergradRequirements.inProgress.filter(item => item.GE_ATTRIBUTE === 'C1').length;
+    const c2Progress = undergradRequirements.inProgress.filter(item => item.GE_ATTRIBUTE === 'C2').length;
+    const c12Progress = c1Progress + c2Progress;
+
+    const path = areaResolver.getAreaPath('C12');
+    const urlPath = path + `.image.url`;
+
+    if (c1Completed >= 1 && c2Completed >= 1 && c1C2Completed >= 3) {
+        _.set(AreasJSON, urlPath, checkmark);
+    }
+    else if (c1Completed >= 1 && c2Completed >= 1 && c12Progress < 0) {
+        _.set(AreasJSON, urlPath, hourglass);
+    }
+    else {
+        _.set(AreasJSON, urlPath, exclamation);
+    }
+
+
+
 
     // Iterate over Undergrad requirements and generate icon JSON for each
     for (let item of undergradRequirements.incomplete) {
