@@ -1,4 +1,5 @@
 const axios = require('axios');
+const config = require('../src/config');
 
 async function getOnWishlistGEAttributes(studentID) {
     try {
@@ -10,10 +11,9 @@ async function getOnWishlistGEAttributes(studentID) {
         const data = response.data;
 
         // Get the onWishList GE_ATTRIBUTES
-        const onWishlistGEAttributes =
-            data[0].undergradRequirements.onWishList.map((item) => item.GE_ATTRIBUTE);
+        const reqs = data[0].undergradRequirements;
 
-        return onWishlistGEAttributes;
+        return reqs;
 
     } catch (error) {
         console.error(`Error fetching student data: ${error}`);

@@ -28,7 +28,7 @@
                   "items": [
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "../CourseSelection/A1"
                       },
                       "image": {
                         "url": "https://png2.cleanpng.com/sh/54dc78b9fe35d9899e775d3fa18a0e2a/L0KzQYm3VMA0N6tuj5H0aYP2gLBuTfNpbZRwRd9qcnuwc7F0kQV1baMygdV4boOwc73wkL1ieqUyfARuZX6whLrqi702aZQ4StVrN3PmdoKAUL45Omk7UKo7NUG4QoOAVMA1OGg9S6sALoDxd1==/kisspng-check-mark-computer-icons-clip-art-green-tick-5ac32cb7ccf170.8286882515227404078395.png"
@@ -309,16 +309,6 @@
                         "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "B2: Life Sciences",
-                      "description": ""
-                    },
-                    {
-                      "link": {
-                        "relativePath": ""
-                      },
-                      "image": {
-                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
-                      },
-                      "title": "B3: Laboratory Component",
                       "description": ""
                     }
                   ],

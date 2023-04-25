@@ -11,6 +11,12 @@ const swaggerDefinition = require('./swaggerDefinition');
 const app = express();
 app.use(bodyParser.json());
 
+// Log API requests
+app.use((req, res, next) => {
+    console.log(`Request: ${req.method} ${req.path}`);
+    next();
+});
+
 
 // Set up routes //
 const CourseRoutes = require('../routes/courseRoutes');

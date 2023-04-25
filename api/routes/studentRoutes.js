@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const StudentModel = require('../models/studentModel');
+const StudentController = require('../controllers/studentController');
 
 /**
  * @swagger
@@ -197,6 +198,14 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+router.get('/wishlist/add/:studentID/:POS_ID/:area', StudentController.wishlistAdd);
+
+
+
+router.get('/wishlist/remove/:studentID/:POS_ID', StudentController.wishlistRemove);
+
+
+
 
 /**
  * @swagger
@@ -247,10 +256,6 @@ router.get('/:key/:value', async (req, res) => {
     }
 });
 
-
-router.get('/:wishlist/:studentID/:POS_ID', async (req, res) => {
-
-});
 
 /**
  * @swagger

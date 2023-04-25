@@ -1,11 +1,17 @@
-const axios = require('axios'), config = require('../src/config');
+const axios = require('axios');
+const config = require('../src/config');
 
 const templates = require('../templates');
 const getWishlistedCourses = require("./getWishlistedCourses");
-// const {getWishlistedAreas} = require("./index");
+const getUndergradRequirements = require("./getUndergradRequirements");
+const AreaPathResolverClass = require("./areaPathResolver");
+const _ = require('lodash');
+
 
 let AreasJSON = templates.screens.Areas;
 let AreaWishlistJSON = templates.components.AreaWishlist;
+
+
 
 
 // Generate the areas screen
@@ -18,16 +24,14 @@ async function generateAreasScreen() {
 
     // Get GE Areas
     const { data: GEAreas } = await axios.get(`http://localhost:${config.PORT}/api/courses/GEs`);
-
-
-    let path;
-
     console.log(`HELPER GEAreas: `, GEAreas)
+
+    const AreaPathResolver = new AreaPathResolverClass();
+
+    /// Generate Wishlist ///
 
     // Iterate over GE areas and generate json for each
     for (const area of GEAreas) {
-
-        //let currentAreaWishlist = AreaWishlistJSON;
 
         // Get student wishlisted courses from db by studentID
         const wishlistedCourses = await getWishlistedCourses(studentID, area);
@@ -35,7 +39,7 @@ async function generateAreasScreen() {
         console.log('RETURNED wishlistedCourses[0]:', wishlistedCourses[0]);
 
 
-        let items = [];
+        let wishlistJSON = [];
 
 
         // Iterate over wishlisted courses in area and generate json for each
@@ -51,131 +55,125 @@ async function generateAreasScreen() {
                 Typically Offered: ${course.CRSE_TYP_OFFR}`,
                 "accessoryButton": {
                     "link": {
-                        "relativePath": `../../students/wishlist/${studentID}/${course.POS_ID}` // Get pos_ID for course
+                        "relativePath": `../../students/wishlist/remove/${studentID}/${course.POS_ID}` // Get pos_ID for course
                     },
                     "accessoryIcon": "delete",
                     "confirmationMessage": "Are you sure you want to delete this?"
                 }
             };
 
-            items.push(item);
+            wishlistJSON.push(item);
             console.log(`item: `, item);
 
         }
 
+        // Get the JSON Path for the current Area Wishlist
+        const path = AreaPathResolver.getWishlistPath(area);
 
-        switch(area) {
-            case "A1":
-                // Generate A1 Wishlist JSON
-                AreasJSON.content[0].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[0].content[0].items = items;
-                break;
-            case "A2":
-                // Generate A2 Wishlist JSON
-                AreasJSON.content[0].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[1].content[0].items = items;
-                break;
-            case "A3":
-                // Generate A3 Wishlist JSON
-                AreasJSON.content[0].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[2].content[0].items = items;
-                break;
-            case "B4":
-                // Generate B4 Wishlist JSON
-                console.log(`AreasJSON: `, AreasJSON.content[0].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[3].content[0].items);
-
-                AreasJSON.content[0].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[3].content[0].items = items;
-                console.log(`B4 WISHLIST`);
-
-                console.log(`items: `, items);
-
-                break;
-            case "B1":
-                // Generate B1 Wishlist JSON
-                AreasJSON.content[1].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[0].content[0].items = items;
-                break;
-            case "B2":
-                // Generate B2 Wishlist JSON
-                AreasJSON.content[1].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[1].content[0].items = items;
-                break;
-            case "B3":
-                // Generate B3 Wishlist JSON
-                AreasJSON.content[1].content[1].content[0].content[2]
-                    .content[0].content[0].tabs[2].content[0].items = items;
-                break;
-            case "C1":
-                // Generate C1 Wishlist JSON
-                AreasJSON.content[1].content[2].content[0].content[2]
-                    .content[0].content[0].tabs[0].content[0].items = items;
-                break;
-            case "C2":
-                // Generate C2 Wishlist JSON
-                AreasJSON.content[1].content[2].content[0].content[2]
-                    .content[0].content[0].tabs[1].content[0].items = items;
-                break;
-            case "D1":
-                // Generate D1 Wishlist JSON
-                AreasJSON.content[1].content[3].content[0].content[2]
-                    .content[0].content[0].tabs[0].content[0].items = items;
-                break;
-            case "D2":
-                // Generate D2 Wishlist JSON
-                AreasJSON.content[1].content[3].content[0].content[2]
-                    .content[0].content[0].tabs[1].content[0].items = items;
-                break;
-            case "E":
-                // Generate E Wishlist JSON
-                AreasJSON.content[1].content[4].content[0].content[2]
-                    .content[0].content[0].items = items;
-                break;
-            case "F":
-                // Generate F Wishlist JSON
-                AreasJSON.content[1].content[5].content[0].content[2]
-                    .content[0].content[0].items = items;
-                break;
-            default:
-            // Generate default Wishlist JSON
-                console.log(`Defaulting - No area found!`);
-
+        if (path) {
+            // Set the wishlist JSON for the current area
+            _.set(AreasJSON, path, wishlistJSON);
+        } else {
+            console.log(`No path found for area ${area}`);
         }
 
-        // Add items to wishlist
-        //AreasJSON.path = items;
     }
 
     // Go back in and add C1/C2 Tab JSON
-    let c12 = [];
+    let c1and2 = [];
 
-    let c1s = AreasJSON.content[1].content[2].content[0].content[2]
-        .content[0].content[0].tabs[0].content[0].items;
-    for (item in c1s) {
-        if (item > 0) {
-            c12.push(c1s[item]);
+    let c1s = AreaPathResolver.getWishlistPath("C1");
+    for (let course in AreasJSON[c1s]) {
+        if (course > 0) {
+            c1and2.push(c1s[course]);
         }
     }
 
-    let c2s = AreasJSON.content[1].content[2].content[0].content[2]
-        .content[0].content[0].tabs[1].content[0].items;
+    let c2s = AreaPathResolver.getWishlistPath("C2");
 
-    for (item in c2s) {
-        if (item > 0) {
-            c12.push(c2s[item]);
+    for (let course in AreasJSON[c2s]) {
+        if (course > 0) {
+            c1and2.push(c2s[course]);
         }
     }
 
 
-    AreasJSON.content[1].content[2].content[0].content[2].
-        content[0].content[0].tabs[2].content[0].items = c12;
+    const path = AreaPathResolver.getWishlistPath("C12")
+        _.set(AreasJSON, path, c1and2)
+
+
+
+    /// Assign Icons ///
+    const checkmark
+        = 'https://png2.cleanpng.com/sh/54dc78b9fe35d9899e775d3fa18a0e2a/L0KzQYm3VMA0N6tuj5H0aYP2gLBuTfNpbZRwRd9qcnuwc7F0kQV1baMygdV4boOwc73wkL1ieqUyfARuZX6whLrqi702aZQ4StVrN3PmdoKAUL45Omk7UKo7NUG4QoOAVMA1OGg9S6sALoDxd1==/kisspng-check-mark-computer-icons-clip-art-green-tick-5ac32cb7ccf170.8286882515227404078395.png';
+    const hourglass
+        = 'https://cdn-icons-png.flaticon.com/512/5801/5801495.png';
+    const exclamation
+        = 'https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png';
+
+    // Get undergrad requirements
+    const undergradRequirements = await getUndergradRequirements(studentID);
+    console.log(`undergradRequirements: `, undergradRequirements.incomplete);
+
+    // Instantiate the AreaPathResolver
+    const areaResolver = new AreaPathResolverClass();
+
+    // Iterate over Undergrad requirements and generate icon JSON for each
+    for (let item of undergradRequirements.incomplete) {
+        const path = areaResolver.getAreaPath(item.GE_ATTRIBUTE);
+        console.log(`path: `, path);
+        if (!path) {
+            console.log(`SKIPPING ${item.GE_ATTRIBUTE}`)
+            continue;
+        }
+        console.log(`ENTERING ${item.GE_ATTRIBUTE}`)
+
+        const urlPath = path + `.image.url`;
+        _.set(AreasJSON, urlPath, exclamation);
+
+        const linkPath = path + `.link.relativePath`;
+        _.set(AreasJSON, linkPath, `../CourseSelection/${item.GE_ATTRIBUTE}`);
+        console.log(`AreasJSON.path.image.url: `, AreasJSON[path.image.url]);
+    }
+
+    for (let item of undergradRequirements.inProgress) {
+        console.log(`Undergrad requirements in progress: `, item.GE_ATTRIBUTE);
+        const path = areaResolver.getAreaPath(item.GE_ATTRIBUTE);
+        if (!path) {
+            continue;
+        }
+        console.log(`Path: ${path}`);
+
+        console.log(`ENTERING ${item.GE_ATTRIBUTE}`)
+
+
+        const urlPath = path + '.image.url';
+        console.log(`AreasJSON.path: ${_.get(AreasJSON, path)}`);
+        console.log(`AreasJSON.urlPath: ${_.get(AreasJSON, urlPath)}`);
+
+        _.set(AreasJSON, urlPath, hourglass);
+
+        const linkPath = path + `.link.relativePath`;
+        _.set(AreasJSON, linkPath, `../CourseSelection/${item.GE_ATTRIBUTE}`);
+    }
+
+    for (let item of undergradRequirements.completed) {
+        const path = areaResolver.getAreaPath(item.GE_ATTRIBUTE);
+        if (!path) {
+            continue;
+        }
+        const urlPath = path + `.image.url`;
+        _.set(AreasJSON, urlPath, checkmark);
+
+        const linkPath = path + `.link.relativePath`;
+        _.set(AreasJSON, linkPath, `../CourseSelection/${item.GE_ATTRIBUTE}`);
+    }
+
 
 
     // Return Modified Screen JSON
     console.log(`AREAS JSON: `, AreasJSON);
     return(AreasJSON);
-
 
 }
 
