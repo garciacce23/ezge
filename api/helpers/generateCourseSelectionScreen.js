@@ -12,6 +12,8 @@ async function generateCourseSelectionScreen(area) {
 
     let CourseSelectionJSON = templates.screens.CourseSelection;
 
+    CourseSelectionJSON.content[2].heading = `Area: ${area}`;
+
 
     const { data: areaCourses }
         = await axios.get(`http://localhost:${config.PORT}/api/courses/GE_ATTRIBUTE/${area}`);
@@ -24,7 +26,7 @@ async function generateCourseSelectionScreen(area) {
         let item =
             {
                 "label": "",
-                "title": `${course.CRSE_TITLE}`,
+                "title": `${course.CRSE}: ${course.CRSE_TITLE}`,
                 "content": [
                     {
                         "id": "filters_con",
@@ -35,7 +37,7 @@ async function generateCourseSelectionScreen(area) {
                             },
                             {
                                 "link": {
-                                    "relativePath": `../../students/wishlist/remove/${studentID}/${course.POS_ID}/${area}`
+                                    "relativePath": `../students/wishlist/add/${studentID}/${course.POS_ID}/${area}`
                                 },
                                 "title": "Select",
                                 "actionStyle": "constructive",

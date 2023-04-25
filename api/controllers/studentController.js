@@ -10,8 +10,8 @@ class StudentController {
         try {
             const student = await studentService.wishlistAdd(studentID, POS_ID);
             let redirectJSON = Templates.screens.WishlistAdd;
-            redirectJSON.metadata.redirectLink.external =
-                `https://www.ezge152.link/api/modules/CourseSelection/${area}`
+            redirectJSON.metadata.redirectLink.relativePath =
+                `../modules/CourseSelection/${area}`
             console.log(`redirectJSON: ${redirectJSON}`);
             res.json(redirectJSON);
         }

@@ -55,7 +55,7 @@ async function generateAreasScreen() {
                 Typically Offered: ${course.CRSE_TYP_OFFR}`,
                 "accessoryButton": {
                     "link": {
-                        "relativePath": `../../students/wishlist/remove/${studentID}/${course.POS_ID}` // Get pos_ID for course
+                        "relativePath": `../students/wishlist/remove/${studentID}/${course.POS_ID}` // Get pos_ID for course
                     },
                     "accessoryIcon": "delete",
                     "confirmationMessage": "Are you sure you want to delete this?"
@@ -80,36 +80,38 @@ async function generateAreasScreen() {
     }
 
     // Go back in and add C1/C2 Tab JSON
-    let c1and2 = [];
+    let c12 = [];
 
-    let c1s = AreaPathResolver.getWishlistPath("C1");
-    for (let course in AreasJSON[c1s]) {
-        if (course > 0) {
-            c1and2.push(c1s[course]);
+    let c1path = AreaPathResolver.getWishlistPath('C1');
+    let c1s = _.get(AreasJSON, c1path)
+    for (let item in c1s) {
+        if (item > 0) {
+            c12.push(c1s[item]);
         }
     }
 
-    let c2s = AreaPathResolver.getWishlistPath("C2");
+    let c2path = AreaPathResolver.getWishlistPath('C2');
+    let c2s = _.get(AreasJSON, c2path)
 
-    for (let course in AreasJSON[c2s]) {
-        if (course > 0) {
-            c1and2.push(c2s[course]);
+    for (let item in c2s) {
+        if (item > 0) {
+            c12.push(c2s[item]);
         }
     }
 
-
-    const path = AreaPathResolver.getWishlistPath("C12")
-        _.set(AreasJSON, path, c1and2)
+    c12Path = AreaPathResolver.getWishlistPath('C12');
+    _.set(AreasJSON, c12Path, c12);
 
 
 
     /// Assign Icons ///
     const checkmark
-        = 'https://png2.cleanpng.com/sh/54dc78b9fe35d9899e775d3fa18a0e2a/L0KzQYm3VMA0N6tuj5H0aYP2gLBuTfNpbZRwRd9qcnuwc7F0kQV1baMygdV4boOwc73wkL1ieqUyfARuZX6whLrqi702aZQ4StVrN3PmdoKAUL45Omk7UKo7NUG4QoOAVMA1OGg9S6sALoDxd1==/kisspng-check-mark-computer-icons-clip-art-green-tick-5ac32cb7ccf170.8286882515227404078395.png';
+        = `https://www.ezge152.link/images/checkmark`;
     const hourglass
         = 'https://cdn-icons-png.flaticon.com/512/5801/5801495.png';
     const exclamation
         = 'https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png';
+
 
     // Get undergrad requirements
     const undergradRequirements = await getUndergradRequirements(studentID);
@@ -121,19 +123,12 @@ async function generateAreasScreen() {
     // Iterate over Undergrad requirements and generate icon JSON for each
     for (let item of undergradRequirements.incomplete) {
         const path = areaResolver.getAreaPath(item.GE_ATTRIBUTE);
-        console.log(`path: `, path);
         if (!path) {
-            console.log(`SKIPPING ${item.GE_ATTRIBUTE}`)
             continue;
         }
-        console.log(`ENTERING ${item.GE_ATTRIBUTE}`)
 
         const urlPath = path + `.image.url`;
         _.set(AreasJSON, urlPath, exclamation);
-
-        const linkPath = path + `.link.relativePath`;
-        _.set(AreasJSON, linkPath, `../CourseSelection/${item.GE_ATTRIBUTE}`);
-        console.log(`AreasJSON.path.image.url: `, AreasJSON[path.image.url]);
     }
 
     for (let item of undergradRequirements.inProgress) {
@@ -142,19 +137,10 @@ async function generateAreasScreen() {
         if (!path) {
             continue;
         }
-        console.log(`Path: ${path}`);
-
-        console.log(`ENTERING ${item.GE_ATTRIBUTE}`)
-
 
         const urlPath = path + '.image.url';
-        console.log(`AreasJSON.path: ${_.get(AreasJSON, path)}`);
-        console.log(`AreasJSON.urlPath: ${_.get(AreasJSON, urlPath)}`);
 
         _.set(AreasJSON, urlPath, hourglass);
-
-        const linkPath = path + `.link.relativePath`;
-        _.set(AreasJSON, linkPath, `../CourseSelection/${item.GE_ATTRIBUTE}`);
     }
 
     for (let item of undergradRequirements.completed) {
@@ -162,11 +148,9 @@ async function generateAreasScreen() {
         if (!path) {
             continue;
         }
+
         const urlPath = path + `.image.url`;
         _.set(AreasJSON, urlPath, checkmark);
-
-        const linkPath = path + `.link.relativePath`;
-        _.set(AreasJSON, linkPath, `../CourseSelection/${item.GE_ATTRIBUTE}`);
     }
 
 

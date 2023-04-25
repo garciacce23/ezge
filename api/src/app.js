@@ -39,6 +39,12 @@ app.use('/api/ajaxContents', ajaxContentRoutes);
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
+
+//Static Images (checkmark)
+app.get('/images/checkmark', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/static', 'checkmark.png'));
+});
+
 app.get('/test', (req, res) => {
     res.send('Rizzy GE Test Page');
 });

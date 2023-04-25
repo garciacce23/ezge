@@ -5,7 +5,7 @@
   "content": [
     {
       "link": {
-        "relativePath": "../Areas"
+        "relativePath": "./Areas"
       },
       "title": "Back",
       "marginTop": "xloose",
