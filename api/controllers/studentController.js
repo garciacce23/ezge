@@ -11,7 +11,7 @@ class StudentController {
             const student = await studentService.wishlistAdd(studentID, POS_ID);
             let redirectJSON = Templates.screens.WishlistAdd;
             redirectJSON.metadata.redirectLink.relativePath =
-                `../modules/CourseSelection/${area}`
+                `../modules/Areas`
             console.log(`redirectJSON: ${redirectJSON}`);
             res.json(redirectJSON);
         }

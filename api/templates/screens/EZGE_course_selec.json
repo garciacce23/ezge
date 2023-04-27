@@ -69,15 +69,13 @@
                       ],
                       "options": {
                         "1": "Course Name",
-                        "2": "Course Subject",
-                        "3": "Units"
+                        "2": "Units"
                       },
                       "description": "",
                       "elementType": "formInputCheckboxGroup",
                       "optionDescriptions": {
                         "1": "",
-                        "2": "",
-                        "3": ""
+                        "2": ""
                       }
                     },
                     {

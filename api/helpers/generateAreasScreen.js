@@ -12,8 +12,6 @@ let AreasJSON = templates.screens.Areas;
 let AreaWishlistJSON = templates.components.AreaWishlist;
 
 
-
-
 // Generate the areas screen
 async function generateAreasScreen() {
 
@@ -51,8 +49,8 @@ async function generateAreasScreen() {
 
             const item = {
                 "title": course.CRSE_TITLE,
-                "description": `Units: ${course.UNITS_RANGE}
-                Typically Offered: ${course.CRSE_TYP_OFFR}`,
+                "description": `<p>Units: ${course.UNITS_RANGE} <br>
+                Typically Offered: ${course.CRSE_TYP_OFFR} </p>`,
                 "accessoryButton": {
                     "link": {
                         "relativePath": `../students/wishlist/remove/${studentID}/${course.POS_ID}` // Get pos_ID for course
@@ -99,7 +97,7 @@ async function generateAreasScreen() {
         }
     }
 
-    c12Path = AreaPathResolver.getWishlistPath('C12');
+    const c12Path = AreaPathResolver.getWishlistPath('C12');
     _.set(AreasJSON, c12Path, c12);
 
 
@@ -116,6 +114,8 @@ async function generateAreasScreen() {
         = 'https://cdn-icons-png.flaticon.com/512/5801/5801495.png';
     const exclamation
         = 'https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png';
+
+
 
 
     // Get undergrad requirements
