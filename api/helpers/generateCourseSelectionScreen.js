@@ -10,25 +10,47 @@ async function generateCourseSelectionScreen(area) {
     // Get student id from JWT...
     const studentID = 123456789;
 
+    // Copy Template JSON
     let CourseSelectionJSON = JSON.parse(JSON.stringify(templates.screens.CourseSelection));
 
-    CourseSelectionJSON.content[2].heading = `Area: ${area}`;
+    // Set Title to Area: Area Description
+
+    const areasDict = {
+        "A1": "Oral Communications",
+        "A2": "Written Communication",
+        "A3": "Critical Thinking",
+        "B1": "Physical Science",
+        "B2": "Life Science",
+        "B4": "Quantitative Reasoning",
+        "C1": "Arts",
+        "C2": "Humanities",
+        "D1": "American History",
+        "D2": "Social Science",
+        "E": "Lifelong Learning and Self-Development",
+        "F": "Ethnic Studies"
+    }
+
+    const areaDescription = areasDict[area];
+    CourseSelectionJSON.content[2].heading = `Area ${area}: ${areaDescription}`;
 
 
-    const { data: areaCourses }
-        = await axios.get(`http://localhost:${config.PORT}/api/courses/GE_ATTRIBUTE/${area}`);
+    // Set Form Submission Relative Link
+    CourseSelectionJSON.content[3].content[0].content[0].content[0].relativePath = `./CourseSelection/${area}`;
+    console.log(`Set Form Submission Relative Link: `, CourseSelectionJSON.content[5].content[0].content[1].link.relativePath);
 
-    console.log(`HELPER areaCourses: `, areaCourses);
+    const { data: areaCourses } = await axios.get(`http://localhost:${config.PORT}/api/courses/GE_ATTRIBUTE/${area}`);
+
+    //console.log(`HELPER areaCourses: `, areaCourses);
 
     let courses = [];
 
     for (const index in areaCourses) {
         const course = areaCourses[index];
-        console.log(`COURSE: ${course}`);
+        //console.log(`COURSE: ${course}`);
         let item =
             {
                 "label": "",
-                "title": `${course.CRSE}: ${course.CRSE_TITLE}`,
+                "title": `<strong>${course.CRSE}:</strong> <small>${course.CRSE_TITLE}</small>`,
                 "content": [
                     {
                         "id": "filters_con",
@@ -55,8 +77,12 @@ async function generateCourseSelectionScreen(area) {
                     }
                 ],
                 "description": "",
-                "elementType": "collapsible"
+                "elementType": "collapsible",
+                "borderTopStyle": "none"
             }
+        if (index === 0) {
+            delete item.borderTopStyle;
+        }
 
         courses.push(item);
 
@@ -69,7 +95,7 @@ async function generateCourseSelectionScreen(area) {
 
     // Populate Courses
     for (const course of courses) {
-        console.log(`course: `, course);
+        //console.log(`course: `, course);
         CourseSelectionJSON.content.push(course);
     }
 
@@ -83,7 +109,13 @@ async function generateCourseSelectionScreen(area) {
     // Populate Subjects drop-down
     for (const subject of subjects) {
         console.log(`subject: `, subject);
-        CourseSelectionJSON.content[3].content[0].content[0].content[0].items[2].options.push(subject);
+        const item =
+        {
+            "label": `${subject}`,
+            "value": `${subject}`
+        }
+
+        CourseSelectionJSON.content[3].content[0].content[0].content[0].items[2].options.push(item);
     }
 
     return(CourseSelectionJSON);

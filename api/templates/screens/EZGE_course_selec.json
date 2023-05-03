@@ -47,9 +47,11 @@
               "content": [
                 {
                   "id": "filters_form",
+                  "elementType": "form",
+                  "relativePath": "",
                   "items": [
                     {
-                      "name": "Sem_offered",
+                      "name": "sem_offered_fall_spring",
                       "label": "Semester Typically offered:",
                       "value": [
                         "1",
@@ -62,7 +64,7 @@
                       "elementType": "formInputCheckboxGroup"
                     },
                     {
-                      "name": "devices",
+                      "name": "order_by_course_units",
                       "label": "Order By:",
                       "value": [
 
@@ -103,14 +105,13 @@
                     {
                       "name": "apply_button",
                       "title": "Apply filters",
-                      "minWidth": "8rem",
-                      "buttonType": "submit",
                       "actionStyle": "constructive",
                       "elementType": "formButton",
-                      "borderRadius": "loose"
+                      "buttonType": "submit",
+                      "borderRadius": "loose",
+                      "minWidth": "8rem"
                     }
-                  ],
-                  "elementType": "form"
+                  ]
                 }
               ],
               "padding": "medium",

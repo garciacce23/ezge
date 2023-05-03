@@ -15,18 +15,18 @@ async function getWishlistedCourses(studentID, geArea) {
             const courseResponse =
                 await axios.get(`http://localhost:${config.PORT}/api/courses/POS_ID/${course.POS_ID}`);
             const fetchedCourse = courseResponse.data[0];
-            console.log(`fetchedCourse: `, fetchedCourse);
-            console.log(`fetchedCourse.GE_ATTRIBUTE: `, fetchedCourse.GE_ATTRIBUTE);
-            console.log(`geArea: `, geArea);
+            //console.log(`fetchedCourse: `, fetchedCourse);
+            //console.log(`fetchedCourse.GE_ATTRIBUTE: `, fetchedCourse.GE_ATTRIBUTE);
+            //console.log(`geArea: `, geArea);
             if (fetchedCourse.GE_ATTRIBUTE === geArea) {
-                console.log(`PUSHED fetchedCourse: `, fetchedCourse);
+                //console.log(`PUSHED fetchedCourse: `, fetchedCourse);
                 wishlistedCourses.push(fetchedCourse);
             }
         }
     } catch (error) {
         console.error(error);
     }
-    console.log('getwishlistedCourses:', wishlistedCourses);
+    //console.log('getwishlistedCourses:', wishlistedCourses);
     return wishlistedCourses;
 }
 

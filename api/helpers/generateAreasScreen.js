@@ -8,7 +8,7 @@ const AreaPathResolverClass = require("./areaPathResolver");
 const _ = require('lodash');
 
 
-let AreasJSON = templates.screens.Areas;
+let AreasJSON = JSON.parse(JSON.stringify(templates.screens.Areas));
 let AreaWishlistJSON = templates.components.AreaWishlist;
 
 
@@ -33,8 +33,8 @@ async function generateAreasScreen() {
 
         // Get student wishlisted courses from db by studentID
         const wishlistedCourses = await getWishlistedCourses(studentID, area);
-        console.log('RETURNED wishlistedCourses:', wishlistedCourses);
-        console.log('RETURNED wishlistedCourses[0]:', wishlistedCourses[0]);
+        //console.log('RETURNED wishlistedCourses:', wishlistedCourses);
+        //console.log('RETURNED wishlistedCourses[0]:', wishlistedCourses[0]);
 
 
         let wishlistJSON = [];
@@ -42,13 +42,13 @@ async function generateAreasScreen() {
 
         // Iterate over wishlisted courses in area and generate json for each
         for (const course of wishlistedCourses) {
-            console.log(`course: `, course);
+            //console.log(`course: `, course);
             //const courseItem = wishlistedCourses[course];
 
             console.log(`course title: `, course.CRSE);
 
             const item = {
-                "title": course.CRSE_TITLE,
+                "title": `${course.CRSE}: ${course.CRSE_TITLE}`,
                 "description": `<p>Units: ${course.UNITS_RANGE} <br>
                 Typically Offered: ${course.CRSE_TYP_OFFR} </p>`,
                 "accessoryButton": {
@@ -61,7 +61,7 @@ async function generateAreasScreen() {
             };
 
             wishlistJSON.push(item);
-            console.log(`item: `, item);
+            //console.log(`item: `, item);
 
         }
 
@@ -120,7 +120,7 @@ async function generateAreasScreen() {
 
     // Get undergrad requirements
     const undergradRequirements = await getUndergradRequirements(studentID);
-    console.log(`undergradRequirements: `, undergradRequirements);
+    //console.log(`undergradRequirements: `, undergradRequirements);
 
     // Instantiate the AreaPathResolver
     const areaResolver = new AreaPathResolverClass();
@@ -163,7 +163,7 @@ async function generateAreasScreen() {
     }
 
     for (let item of undergradRequirements.inProgress) {
-        console.log(`Undergrad requirements in progress: `, item.GE_ATTRIBUTE);
+        //console.log(`Undergrad requirements in progress: `, item.GE_ATTRIBUTE);
         const path = areaResolver.getAreaPath(item.GE_ATTRIBUTE);
         if (!path) {
             continue;

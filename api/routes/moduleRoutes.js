@@ -6,7 +6,7 @@ const axios = require('axios'); // For utilizing student and course api routes
 const config = require('../src/config');
 
 router.get('/:screen', ModuleController.getAreaScreen);
-router.get('/:screen/:area/:studentID?', ModuleController.getCourseSelectionScreen);
-router.post('/:screen/:area/:studentID', ModuleController.getCourseSelectionScreen);
+router.get('/:screen/:area/', ModuleController.getCourseSelectionScreen);
+router.post('/:screen/:area/', ModuleController.getCourseSelectionScreenFiltered);
 
 module.exports = router;

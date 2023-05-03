@@ -10,6 +10,7 @@ const swaggerDefinition = require('./swaggerDefinition');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Log API requests
 app.use((req, res, next) => {

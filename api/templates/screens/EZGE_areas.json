@@ -18,7 +18,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area A: Fundamental Skills and Knowledge",
+              "title": "<b>Area A:</b> Fundamental Skills and Knowledge",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>Four courses: One in A1, one in A2, one in A3, & one in B4 for a minimum of 12 units.",
@@ -283,10 +283,10 @@
           "content": [
             {
               "label": "",
-              "title": "Area B: Physical Universe and Its Life Forms",
+              "title": "<b>Area B:</b> Physical Universe and Its Life Forms",
               "content": [
                 {
-                  "html": "<p style='color:#0818A8'>Two courses: One in B1 and one in B2",
+                  "html": "<p style='color:#0818A8'>Two courses: One in B1 and one in B2 (one must have a lab)",
                   "elementType": "html"
                 },
                 {
@@ -443,7 +443,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area C: Arts and Humanities",
+              "title": "<b>Area C:</b> Arts and Humanities",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>Three courses: one in C1, one in C2, and a third from C1 or C2",
@@ -649,7 +649,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area D: Social, Political & Economic Institutions & Behavior, Historical Background",
+              "title": "<b>Area D:</b> Social, Political & Economic Institutions & Behavior, Historical Background",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>Two courses: One in D1 and D2",
@@ -809,7 +809,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area E: Lifelong Understanding & Self-Development",
+              "title": "<b>Area E:</b> Lifelong Understanding & Self-Development",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>One Course",
@@ -910,7 +910,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area F: Ethnic Studies",
+              "title": "<b>Area F:</b> Ethnic Studies",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>One Course",
