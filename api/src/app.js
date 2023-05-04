@@ -10,6 +10,13 @@ const swaggerDefinition = require('./swaggerDefinition');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Log API requests
+app.use((req, res, next) => {
+    console.log(`Request: ${req.method} ${req.path}`);
+    next();
+});
 
 
 // Set up routes //
@@ -22,10 +29,23 @@ app.use('/api/students', StudentRoutes);
 const screenRoutes = require("../routes/screenRoutes");
 app.use('/api/screens', screenRoutes);
 
+const moduleRoutes = require("../routes/moduleRoutes");
+app.use('/api/modules', moduleRoutes);
+
+const ajaxContentRoutes = require("../routes/ajaxContentRoutes");
+app.use('/api/ajaxContents', ajaxContentRoutes);
+
+
 // Splash Page
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
+
+//Static Images (checkmark)
+app.get('/images/checkmark', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/static', 'checkmark.png'));
+});
+
 app.get('/test', (req, res) => {
     res.send('Rizzy GE Test Page');
 });
@@ -36,12 +56,10 @@ const options = {
     swaggerDefinition,
     apis: [path.join(__dirname, '../routes/*.js')],
 };
-
 const swaggerSpec = swaggerJsdoc(options);
 // Serve Swagger documentation at /api-docs
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-console.log(swaggerSpec);
 
 // Export app
 module.exports = app;

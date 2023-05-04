@@ -1,0 +1,14 @@
+cors
+
+app == routes.js
+
+
+
+templates folder
+
+console.log(req.header)
+authorization: {jwt token here}
+
+CMS_ID is student id
+
+use controllers

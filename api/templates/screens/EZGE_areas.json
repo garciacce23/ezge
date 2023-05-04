@@ -1,5 +1,7 @@
-[
 {
+  "metadata": {
+    "version": "2.0"
+  },
   "content": [
     {
       "id": "foundation",
@@ -16,7 +18,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area A: Fundamental Skills and Knowledge",
+              "title": "<b>Area A:</b> Fundamental Skills and Knowledge",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>Four courses: One in A1, one in A2, one in A3, & one in B4 for a minimum of 12 units.",
@@ -26,39 +28,57 @@
                   "items": [
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/A1"
+                      },
+                      "image": {
+                        "url": "https://png2.cleanpng.com/sh/54dc78b9fe35d9899e775d3fa18a0e2a/L0KzQYm3VMA0N6tuj5H0aYP2gLBuTfNpbZRwRd9qcnuwc7F0kQV1baMygdV4boOwc73wkL1ieqUyfARuZX6whLrqi702aZQ4StVrN3PmdoKAUL45Omk7UKo7NUG4QoOAVMA1OGg9S6sALoDxd1==/kisspng-check-mark-computer-icons-clip-art-green-tick-5ac32cb7ccf170.8286882515227404078395.png"
                       },
                       "title": "A1: Oral Communications",
+                      "status": "available",
                       "description": ""
                     },
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/A2"
+                      },
+                      "image": {
+                        "url": "https://cdn-icons-png.flaticon.com/512/5801/5801495.png"
                       },
                       "title": "A2: Written Communication",
                       "description": ""
                     },
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/A3"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "A3: Critical Thinking",
                       "description": ""
                     },
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/B4"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "B4: Quantitative Reasoning",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -75,7 +95,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/A1"
+                                      "title": "A1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "A1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -92,7 +131,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/A2"
+                                      "title": "A2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "A2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -109,7 +167,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/A3"
+                                      "title": "A3Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "A3Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -126,7 +203,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B4"
+                                      "title": "B4Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "B4Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -187,42 +283,46 @@
           "content": [
             {
               "label": "",
-              "title": "Area B: Physical Universe and Its Life Forms",
+              "title": "<b>Area B:</b> Physical Universe and Its Life Forms",
               "content": [
                 {
-                  "html": "<p style='color:#0818A8'>Two courses: One in B1 and one in B2",
+                  "html": "<p style='color:#0818A8'>Two courses: One in B1 and one in B2 (one must have a lab)",
                   "elementType": "html"
                 },
                 {
                   "items": [
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/B1"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "B1: Physical Sciences",
                       "description": ""
                     },
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/B2"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "B2: Life Sciences",
-                      "description": ""
-                    },
-                    {
-                      "link": {
-                        "relativePath": ""
-                      },
-                      "title": "B3: Laboratory Component",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -239,7 +339,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B1"
+                                      "title": "B1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "B1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -256,23 +375,26 @@
                                 {
                                   "items": [
                                     {
-                                      "ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B2"
-                                    }
-                                  ],
-                                  "listStyle": "separated",
-                                  "elementType": "list",
-                                  "backgroundColor": "#D8D2E1",
-                                  "textblockMarginTop": "xtight",
-                                  "textblockMarginBottom": "xtight"
-                                }
-                              ]
-                            },
-                            {
-                              "title": "B3",
-                              "content": [
-                                {
-                                  "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/B3"
+                                      "title": "B2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "B2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -321,7 +443,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area C: Arts and Humanities",
+              "title": "<b>Area C:</b> Arts and Humanities",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>Three courses: one in C1, one in C2, and a third from C1 or C2",
@@ -331,14 +453,20 @@
                   "items": [
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/C1"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "C1: Arts",
                       "description": ""
                     },
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/C2"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "C2: Humanities",
                       "description": ""
@@ -347,16 +475,24 @@
                       "link": {
                         "relativePath": ""
                       },
-                      "title": "C1/C2:",
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
+                      },
+                      "title": "C1/C2",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -372,7 +508,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/C1"
+                                    {
+                                      "title": "C1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "C1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -388,7 +544,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/C2"
+                                    {
+                                      "title": "C2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "C2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -473,7 +649,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area D: Social, Political & Economic Institutions & Behavior, Historical Background",
+              "title": "<b>Area D:</b> Social, Political & Economic Institutions & Behavior, Historical Background",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>Two courses: One in D1 and D2",
@@ -483,25 +659,36 @@
                   "items": [
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/D1"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "D1: American History",
                       "description": ""
                     },
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/D2"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "D2: Social Science",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -517,7 +704,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/D1"
+                                    {
+                                      "title": "D1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "D1Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -533,7 +740,27 @@
                               "content": [
                                 {
                                   "items": [
-                                    {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/D2"
+                                    {
+                                      "title": "D2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
+                                    },
+                                    {
+                                      "title": "D2Class name",
+                                      "description": "Units: ",
+                                      "accessoryButton": {
+                                        "link": {
+                                          "relativePath": ""
+                                        },
+                                        "accessoryIcon": "delete",
+                                        "confirmationMessage": "Are you sure you want to delete this?"
+                                      }
                                     }
                                   ],
                                   "listStyle": "separated",
@@ -582,7 +809,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area E: Lifelong Understanding & Self-Development",
+              "title": "<b>Area E:</b> Lifelong Understanding & Self-Development",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>One Course",
@@ -592,18 +819,26 @@
                   "items": [
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/E"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "E:",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -613,7 +848,27 @@
                       "content": [
                         {
                           "items": [
-                            {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/E"
+                            {
+                              "title": "EClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
+                            },
+                            {
+                              "title": "EClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
                             }
                           ],
                           "listStyle": "separated",
@@ -655,7 +910,7 @@
           "content": [
             {
               "label": "",
-              "title": "Area F: Ethnic Studies",
+              "title": "<b>Area F:</b> Ethnic Studies",
               "content": [
                 {
                   "html": "<p style='color:#0818A8'>One Course",
@@ -665,18 +920,26 @@
                   "items": [
                     {
                       "link": {
-                        "relativePath": ""
+                        "relativePath": "./CourseSelection/F"
+                      },
+                      "image": {
+                        "url": "https://www.pngmart.com/files/15/Red-Exclamation-Mark-PNG-Background-Image.png"
                       },
                       "title": "F:",
                       "description": ""
                     }
                   ],
                   "listStyle": "grouped",
+                  "imageStyle": "thumbnailSmall",
+                  "imageWidth": "2.25rem",
                   "elementType": "statusList",
+                  "imageHeight": "2.25rem",
+                  "imageMargin": "tight",
                   "showTopBorder": false,
                   "backgroundColor": "theme:subfocal_background_color",
                   "showBottomBorder": false,
-                  "showAccessoryIcons": true
+                  "showAccessoryIcons": true,
+                  "imageHorizontalPosition": "right"
                 },
                 {
                   "id": "wishlist",
@@ -686,7 +949,27 @@
                       "content": [
                         {
                           "items": [
-                            {"ajaxRelativePath": "./ajaxContent/GE_AREAS/tabs/F"
+                            {
+                              "title": "FClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
+                            },
+                            {
+                              "title": "FClass name",
+                              "description": "Units: ",
+                              "accessoryButton": {
+                                "link": {
+                                  "relativePath": ""
+                                },
+                                "accessoryIcon": "delete",
+                                "confirmationMessage": "Are you sure you want to delete this?"
+                              }
                             }
                           ],
                           "listStyle": "separated",
@@ -727,10 +1010,5 @@
       "elementType": "container"
     }
   ],
-  "metadata": {
-    "version": "2.0",
-    "ID": "GE_AREAS"
-  },
-  "contentContainerWidth": "narrow"
+  "contentContainerWidth": "medium"
 }
-]

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const StudentModel = require('../models/studentModel');
+const StudentController = require('../controllers/studentController');
 
 /**
  * @swagger
@@ -137,12 +138,31 @@ const StudentModel = require('../models/studentModel');
  */
 router.post('/', async (req, res, next) => {
     const newStudent = new StudentModel({
-        // Student model fields
+        studentID: req.body.studentID,
+        name: {
+            first: req.body.name.first,
+            last: req.body.name.last
+        },
+        courses: {
+            completed: req.body.courses.completed,
+            inProgress: req.body.courses.inProgress,
+            wishList: req.body.courses.wishList
+        },
+        undergradRequirements: req.body.undergradRequirements
+            ? {
+                completed: req.body.undergradRequirements.completed,
+                inProgress: req.body.undergradRequirements.inProgress,
+                onWishList: req.body.undergradRequirements.onWishList,
+                incomplete: req.body.undergradRequirements.incomplete,
+            }
+            : undefined,
+        major: req.body.major,
+        standing: req.body.standing,
     });
 
     try {
         await newStudent.save();
-        res.json(newStudent);
+        res.status(201).json(newStudent);
     } catch (error) {
         console.log(error);
         next(error);
@@ -177,6 +197,14 @@ router.get('/', async (req, res, next) => {
         next(error);
     }
 });
+
+router.get('/wishlist/add/:studentID/:POS_ID/:area', StudentController.wishlistAdd);
+
+
+
+router.get('/wishlist/remove/:studentID/:POS_ID', StudentController.wishlistRemove);
+
+
 
 
 /**
@@ -227,8 +255,6 @@ router.get('/:key/:value', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
-
 
 
 /**
