@@ -187,7 +187,7 @@ async function generateAreasScreen() {
 
 
     // Return Modified Screen JSON
-    console.log(`AREAS JSON: `, AreasJSON);
+    //console.log(`AREAS JSON: `, AreasJSON);
     return(AreasJSON);
 
 }
